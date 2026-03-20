@@ -21,10 +21,11 @@ const packages = [
       "Campaign setup guide with targeting",
       "7 business day delivery",
     ],
+    bonus: "30+ static ad creatives based on winning patterns",
     valueAnchors: [
       { item: "5 videos at UGC creator rates", value: "$1,250-2,500" },
       { item: "Scripting + copywriting", value: "$500" },
-      { item: "Campaign setup guide", value: "$200" },
+      { item: "30+ static ad creatives", value: "$600" },
     ],
   },
   {
@@ -44,10 +45,11 @@ const packages = [
       "Campaign setup guide with audience targeting",
       "7 business day delivery",
     ],
+    bonus: "30+ static ad creatives based on winning patterns",
     valueAnchors: [
       { item: "15 videos at UGC creator rates", value: "$3,750-7,500" },
       { item: "3 unique scripts + copywriting", value: "$1,500" },
-      { item: "Campaign strategy guide", value: "$500" },
+      { item: "30+ static ad creatives", value: "$600" },
     ],
   },
   {
@@ -67,10 +69,11 @@ const packages = [
       "30-min strategy call on launch approach",
       "10 business day delivery + 1 round revisions",
     ],
+    bonus: "30+ static ad creatives based on winning patterns",
     valueAnchors: [
       { item: "30 videos at UGC creator rates", value: "$7,500-15,000" },
-      { item: "Competitor ad audit", value: "$1,000" },
-      { item: "Strategy call + copywriting", value: "$2,000" },
+      { item: "Competitor ad audit + strategy call", value: "$2,000" },
+      { item: "30+ static ad creatives", value: "$600" },
     ],
   },
 ];
@@ -120,7 +123,7 @@ export function Pricing() {
         </motion.p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border rounded-2xl overflow-hidden bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 glass-strong rounded-2xl overflow-hidden">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
@@ -131,7 +134,7 @@ export function Pricing() {
               className={`relative flex flex-col p-8 md:p-9 ${
                 pkg.popular
                   ? "bg-navy text-white"
-                  : "border-b md:border-b-0 md:border-r border-border last:border-0"
+                  : "border-b md:border-b-0 md:border-r border-black/[0.04] last:border-0"
               }`}
             >
               {pkg.popular && (
@@ -202,6 +205,24 @@ export function Pricing() {
                 ))}
               </ul>
 
+              {/* Bonus */}
+              {pkg.bonus && (
+                <div
+                  className={`rounded-lg p-3 mb-4 text-[11px] border border-dashed ${
+                    pkg.popular
+                      ? "border-white/15 bg-white/5"
+                      : "border-navy/10 bg-navy/[0.02]"
+                  }`}
+                >
+                  <span className={`font-medium ${pkg.popular ? "text-white/60" : "text-navy"}`}>
+                    BONUS:
+                  </span>{" "}
+                  <span className={pkg.popular ? "text-white/40" : "text-muted"}>
+                    {pkg.bonus}
+                  </span>
+                </div>
+              )}
+
               {/* Value anchor */}
               <div
                 className={`rounded-lg p-3 mb-5 text-[10px] ${
@@ -248,7 +269,7 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-6 py-5 rounded-xl border border-border bg-white"
+          className="text-center mt-6 py-5 rounded-xl glass"
         >
           <p className="text-[13px] text-navy font-medium">
             Not happy? We revise until you are — or redo it from scratch. No questions asked.
@@ -260,7 +281,7 @@ export function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-8 rounded-2xl border border-border bg-white p-8 md:p-10"
+          className="mt-8 rounded-2xl glass-strong p-8 md:p-10"
         >
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
             <div>

@@ -5,68 +5,44 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
-  {
-    q: "Does AI video actually look real?",
-    a: "Yes. We combine multiple AI tools and professional editing to ensure every video meets broadcast-quality standards. The scroll-stopping hook matters more than whether a human or AI pressed record.",
-  },
-  {
-    q: "What if I already have a marketing agency?",
-    a: "We're their creative supply chain. Most agencies struggle to produce fresh video creative at volume. We give your agency a steady stream of ad-ready video to test.",
-  },
-  {
-    q: "What industries do you work with?",
-    a: "Service businesses, SaaS, agencies, coaches, med spas, dental practices, law firms, real estate, home services, financial services, and more. If you acquire clients through paid ads, we can help.",
-  },
-  {
-    q: "How fast do I get my videos?",
-    a: "One-time packages: 7-10 business days. Monthly retainer: first batch within 48 hours, then rolling weekly delivery.",
-  },
-  {
-    q: "What if I don't like the result?",
-    a: "We revise any video until you're happy — or redo it from scratch. Monthly retainer clients get unlimited revisions. No questions asked.",
-  },
-  {
-    q: "I've never run video ads before. Will this work?",
-    a: "Every package includes a campaign setup guide with targeting, budget, and launch strategy. Monthly clients also get a strategy call and ongoing guidance.",
-  },
-  {
-    q: "Can I use these on any platform?",
-    a: "Yes. Delivered in 9:16 and 1:1. Works on Meta, TikTok, YouTube, LinkedIn, and any platform that supports video ads.",
-  },
-  {
-    q: "Do I need to be on camera?",
-    a: "No. That's the whole point. AI presenters, motion graphics, professional editing — no camera required.",
-  },
+  { q: "Does AI video actually look real?", a: "Yes. We combine multiple AI tools and professional editing to ensure every video meets broadcast-quality standards. The scroll-stopping hook matters more than whether a human or AI pressed record." },
+  { q: "What if I already have a marketing agency?", a: "We're their creative supply chain. Most agencies struggle to produce fresh video creative at volume. We give your agency a steady stream of ad-ready video to test." },
+  { q: "What industries do you work with?", a: "Service businesses, SaaS, agencies, coaches, med spas, dental practices, law firms, real estate, home services, financial services, and more. If you acquire clients through paid ads, we can help." },
+  { q: "How fast do I get my videos?", a: "One-time packages: 7-10 business days. Monthly retainer: first batch within 48 hours, then rolling weekly delivery." },
+  { q: "What if I don't like the result?", a: "We revise any video until you're happy — or redo it from scratch. Monthly retainer clients get unlimited revisions. No questions asked." },
+  { q: "I've never run video ads before. Will this work?", a: "Every package includes a campaign setup guide with targeting, budget, and launch strategy. Monthly clients also get a strategy call and ongoing guidance." },
+  { q: "Can I use these on any platform?", a: "Yes. Delivered in 9:16 and 1:1. Works on Meta, TikTok, YouTube, LinkedIn, and any platform that supports video ads." },
+  { q: "Do I need to be on camera?", a: "No. That's the whole point. AI presenters, motion graphics, professional editing — no camera required." },
 ];
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-28 md:py-36">
+    <section id="faq" className="py-24 md:py-32">
       <div className="mx-auto max-w-xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-cal text-3xl md:text-4xl text-center mb-14 text-navy"
+          className="font-cal text-3xl md:text-4xl text-center mb-14 text-gradient"
         >
           Questions & answers
         </motion.h2>
 
-        <div className="divide-y divide-border">
+        <div className="glass-strong rounded-2xl overflow-hidden divide-y divide-black/[0.04]">
           {faqs.map((faq, i) => (
             <div key={i}>
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between py-4 text-left group"
+                className="w-full flex items-center justify-between py-4 px-5 text-left group hover:bg-white/30 transition-colors"
               >
-                <span className="text-[14px] font-medium text-navy pr-4 group-hover:text-navy/70 transition-colors">
+                <span className="text-[13px] font-medium text-navy pr-4">
                   {faq.q}
                 </span>
                 <ChevronDown
                   size={14}
-                  className={`shrink-0 text-muted transition-transform duration-200 ${
+                  className={`shrink-0 text-muted-foreground transition-transform duration-200 ${
                     openIndex === i ? "rotate-180" : ""
                   }`}
                 />
@@ -80,7 +56,7 @@ export function FAQ() {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <p className="pb-4 text-[13px] text-muted leading-relaxed">
+                    <p className="px-5 pb-4 text-[12px] text-muted leading-relaxed">
                       {faq.a}
                     </p>
                   </motion.div>

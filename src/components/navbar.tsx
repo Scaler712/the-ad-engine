@@ -22,14 +22,14 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/80 backdrop-blur-xl border-b border-border/60"
+          ? "glass"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-14">
-        <a href="#" className="font-cal text-base text-navy">
+        <a href="#" className="font-cal text-[15px] text-gradient">
           The Ad Engine
         </a>
 
@@ -45,7 +45,7 @@ export function Navbar() {
           ))}
           <a
             href="#packages"
-            className="bg-navy text-white text-[13px] font-medium px-5 py-2 rounded-lg hover:bg-navy-light transition-colors"
+            className="bg-navy text-white text-[13px] font-medium px-5 py-2 rounded-lg hover:bg-navy-light transition-all shadow-sm"
           >
             Get Started
           </a>
@@ -66,7 +66,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-border"
+            className="md:hidden glass-strong"
           >
             <div className="px-6 py-5 flex flex-col gap-4">
               {links.map((l) => (
