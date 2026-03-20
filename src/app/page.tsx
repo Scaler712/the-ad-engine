@@ -19,7 +19,6 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <StatsBar />
         <Platforms />
         <Problem />
         <Process />
