@@ -175,7 +175,7 @@ function RecycledArtifact() {
 
 export function Problem() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -205,7 +205,7 @@ export function Problem() {
             viewport={{ once: true }}
             className="card p-8 md:p-10 md:col-span-7"
           >
-            <div className="mb-6">
+            <div className="mb-6 overflow-hidden max-h-[280px]">
               <InvoiceArtifact />
             </div>
             <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
@@ -224,7 +224,7 @@ export function Problem() {
             transition={{ delay: 0.06 }}
             className="card p-8 md:p-10 md:col-span-5"
           >
-            <div className="mb-6">
+            <div className="mb-6 overflow-hidden max-h-[280px]">
               <TimelineArtifact />
             </div>
             <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
@@ -244,7 +244,7 @@ export function Problem() {
             transition={{ delay: 0.12 }}
             className="card p-8 md:p-10 md:col-span-5"
           >
-            <div className="mb-6">
+            <div className="mb-6 overflow-hidden max-h-[280px]">
               <NoCameraArtifact />
             </div>
             <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
@@ -263,7 +263,7 @@ export function Problem() {
             transition={{ delay: 0.18 }}
             className="card p-8 md:p-10 md:col-span-7"
           >
-            <div className="mb-6">
+            <div className="mb-6 overflow-hidden max-h-[280px]">
               <RecycledArtifact />
             </div>
             <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">

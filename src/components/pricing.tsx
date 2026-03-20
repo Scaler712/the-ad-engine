@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, Phone } from "lucide-react";
+import ShinyButton from "@/components/ui/shiny-button";
 
 const packages = [
   {
@@ -78,7 +79,7 @@ const retainerFeatures = [
 
 export function Pricing() {
   return (
-    <section id="packages" className="py-24 md:py-32">
+    <section id="packages" className="py-16 md:py-20">
       <div className="mx-auto max-w-4xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -158,16 +159,18 @@ export function Pricing() {
 
               {/* CTA */}
               <div className="px-6 pb-6">
-                <a
-                  href="#contact"
-                  className={`block text-center py-2.5 rounded-xl text-sm font-medium transition-all ${
-                    pkg.popular
-                      ? "bg-[#1a1a1a] text-white hover:bg-[#333]"
-                      : "bg-[#f5f5f7] text-[#1a1a1a] hover:bg-[#eee]"
-                  }`}
-                >
-                  Get Started
-                </a>
+                {pkg.popular ? (
+                  <ShinyButton href="#contact" className="w-full">
+                    Get Started
+                  </ShinyButton>
+                ) : (
+                  <a
+                    href="#contact"
+                    className="block text-center py-2.5 rounded-xl text-sm font-medium transition-all bg-[#f5f5f7] text-[#1a1a1a] hover:bg-[#eee]"
+                  >
+                    Get Started
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
+import ShinyButton from "@/components/ui/shiny-button";
 
 export function CTA() {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-[#eaecf3]">
+    <section id="contact" className="py-16 md:py-20 bg-[#eaecf3]">
       <div className="mx-auto max-w-3xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -28,13 +29,10 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start gap-3 mb-8">
-            <a
-              href="#packages"
-              className="bg-[#4a7dff] text-white px-8 py-3 rounded-xl text-sm font-medium hover:brightness-110 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(74,125,255,0.3)]"
-            >
+            <ShinyButton href="#packages">
               Choose Your Package
               <ArrowRight size={14} />
-            </a>
+            </ShinyButton>
             <a
               href="#contact"
               className="bg-white text-[#1a1a1a] px-8 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-all flex items-center gap-2"

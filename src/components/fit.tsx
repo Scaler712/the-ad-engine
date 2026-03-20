@@ -21,7 +21,7 @@ const notFit = [
 
 export function Fit() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

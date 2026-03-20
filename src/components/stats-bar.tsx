@@ -12,7 +12,7 @@ function AnimatedNumber({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
-  const [display, setDisplay] = useState(value.toLocaleString());
+  const [display, setDisplay] = useState("0");
 
   useEffect(() => {
     if (!isInView) return;
@@ -53,7 +53,7 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="py-10 md:py-14 -mt-16 relative z-10">
+    <section className="py-6 md:py-8 -mt-16 relative z-10">
       <div className="mx-auto max-w-3xl px-6">
         <div className="grid grid-cols-3 gap-8">
           {stats.map((stat, i) => (

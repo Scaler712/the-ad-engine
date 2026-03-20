@@ -58,7 +58,7 @@ export function Work() {
   const visible = showAll ? allVideos : allVideos.slice(0, 6);
 
   return (
-    <section id="work" className="py-24 md:py-32">
+    <section id="work" className="py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ShinyButton from "@/components/ui/shiny-button";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -43,12 +44,7 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
-          <a
-            href="#packages"
-            className="bg-[#1a1a1a] text-white text-sm font-medium px-5 py-2 rounded-lg hover:bg-[#2d2d44] transition-all"
-          >
-            Get Started
-          </a>
+          <ShinyButton href="#packages">Get Started</ShinyButton>
         </div>
 
         <button

@@ -201,7 +201,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="py-24 md:py-32">
+    <section id="process" className="py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -215,7 +215,7 @@ export function Process() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-center text-lg mb-16 max-w-sm mx-auto"
+          className="text-gray-500 text-center text-lg mb-10 max-w-sm mx-auto"
         >
           From zero content to ads live in under a week
         </motion.p>
