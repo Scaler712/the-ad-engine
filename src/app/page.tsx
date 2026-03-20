@@ -7,11 +7,10 @@ import { Problem } from "@/components/problem";
 import { Process } from "@/components/process";
 import { Work } from "@/components/work";
 import { Results } from "@/components/results";
-import { ClientValue } from "@/components/client-value";
+import { Comparison } from "@/components/comparison";
 import { Pricing } from "@/components/pricing";
 import { Fit } from "@/components/fit";
 import { FAQ } from "@/components/faq";
-import { Promise } from "@/components/promise";
 import { CTA } from "@/components/cta";
 import { Footer } from "@/components/footer";
 
@@ -28,11 +27,10 @@ export default function Home() {
         <Process />
         <Work />
         <Results />
-        <ClientValue />
+        <Comparison />
         <Pricing />
         <Fit />
         <FAQ />
-        <Promise />
         <CTA />
       </main>
       <Footer />
