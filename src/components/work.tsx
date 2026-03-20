@@ -66,15 +66,16 @@ export function Work() {
           viewport={{ once: true }}
           className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
-          Real ads. Real results.
+
+          This is what $100 per video looks like.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-center text-lg mb-12 max-w-sm mx-auto"
+          className="text-gray-500 text-center text-lg mb-12 max-w-md mx-auto"
         >
-          Every video was produced by our team — scripted, edited, delivered
+          Every video below was scripted, produced, and edited by our team. Judge the quality yourself.
           ad-ready.
         </motion.p>
 

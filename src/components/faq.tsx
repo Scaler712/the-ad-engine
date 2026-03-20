@@ -51,7 +51,7 @@ export function FAQ() {
           viewport={{ once: true }}
           className="font-heading text-3xl md:text-4xl tracking-tight text-left mb-12 text-[#1a1a1a]"
         >
-          Frequently asked questions
+          Before you decide
         </motion.h2>
 
         <div className="divide-y divide-gray-200">

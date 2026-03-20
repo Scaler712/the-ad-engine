@@ -58,13 +58,12 @@ export function Results() {
             viewport={{ once: true }}
           >
             <h2 className="font-heading text-4xl md:text-5xl tracking-tight text-[#1a1a1a] leading-[1.1] mb-6">
-              One winning ad pays for
-              <br />
-              the entire package.
+              Do the math. One client pays for everything.
             </h2>
             <p className="text-gray-500 text-base mb-10 leading-relaxed">
-              Our Growth package is $1,500. If one ad brings you one client,
-              here&apos;s what that&apos;s worth:
+              Our Growth package costs $1,500. One new client from one winning
+              ad makes that back many times over. Here&apos;s what one client is
+              worth in your industry:
             </p>
 
             <div className="space-y-6">

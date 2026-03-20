@@ -15,17 +15,16 @@ export function CTA() {
         >
           <h2 className="text-4xl md:text-5xl tracking-tight leading-[1.1] mb-6">
             <span className="font-semibold text-[#1a1a1a]">
-              Your competitors aren&apos;t waiting.
+              Your competitors are running video ads right now.
             </span>
             <br />
             <span className="font-heading text-[#4a7dff]">
-              Neither should you.
+              Every week you wait is another week they win.
             </span>
           </h2>
 
           <p className="text-gray-500 text-base mb-10 max-w-md leading-relaxed">
-            Every week without fresh creative is a week they&apos;re taking your
-            clients. Pick a package or book a call.
+            Pick a package and get your first batch of ads within 7 days, or book a call to discuss the monthly retainer.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start gap-3 mb-8">
@@ -43,8 +42,7 @@ export function CTA() {
           </div>
 
           <p className="text-xs text-gray-400">
-            No contracts. No commitments. If the work isn&apos;t right, we redo
-            it.
+            No contracts. No commitments. Not happy? We revise or redo. No questions.
           </p>
         </motion.div>
       </div>

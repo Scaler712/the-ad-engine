@@ -87,7 +87,8 @@ export function Pricing() {
           viewport={{ once: true }}
           className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
-          Pick a package. Get your ads.
+
+          One payment. No contracts. Ads that work.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -95,7 +96,7 @@ export function Pricing() {
           viewport={{ once: true }}
           className="text-gray-400 text-center text-base mb-12"
         >
-          One-time purchase. No contracts.
+          Pick a package, get your videos, run your ads. Come back when you need more.
         </motion.p>
 
         {/* iOS-style pricing cards */}

@@ -183,17 +183,17 @@ export function Problem() {
           viewport={{ once: true }}
           className="font-heading text-4xl md:text-5xl tracking-tight text-left leading-[1.1] text-[#1a1a1a] mb-4"
         >
-          You already know video ads
+          You&apos;re not running video ads.
           <br />
-          outperform everything else.
+          It&apos;s costing you clients.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-left text-lg mb-12 max-w-md"
+          className="text-gray-500 text-left text-lg mb-12 max-w-lg"
         >
-          So why aren&apos;t you running them?
+          Every business owner knows video outperforms static. Here&apos;s why most still aren&apos;t doing it.
         </motion.p>
 
         {/* Bento grid: 2 rows, unequal cards */}
@@ -209,11 +209,11 @@ export function Problem() {
               <InvoiceArtifact />
             </div>
             <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
-              Too expensive
+              Production is expensive
             </h3>
             <p className="text-sm text-gray-500 leading-relaxed">
-              A single video shoot costs $3,000-$5,000. UGC creators charge
-              $250-500 per video. You need 10-15 variations to test properly.
+              A video shoot runs $3,000-$5,000. UGC creators charge $250-500 per clip.
+              Testing 10 variations means $2,500-$5,000 before you find a winner.
             </p>
           </motion.div>
 
@@ -228,11 +228,11 @@ export function Problem() {
               <TimelineArtifact />
             </div>
             <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
-              Too slow
+              Takes weeks, not days
             </h3>
             <p className="text-sm text-gray-500 leading-relaxed">
-              Coordinate talent, schedule shoots, wait for edits. By the time
-              creative ships, your competitors have already tested 30 ads.
+              Coordinate talent, schedule shoots, wait for edits, request revisions.
+              By the time creative ships, your competitors have tested 30 ads.
             </p>
           </motion.div>
 
@@ -267,12 +267,11 @@ export function Problem() {
               <RecycledArtifact />
             </div>
             <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
-              Your agency recycles the same creatives
+              Your agency ran out of ideas in month one
             </h3>
             <p className="text-sm text-gray-500 leading-relaxed">
               You&apos;re paying $3-5k/month. They gave you 6 static images and
-              2 videos in month one. You&apos;re still running them in month
-              four.
+              2 videos on day one. Four months later, you&apos;re still running them.
             </p>
           </motion.div>
         </div>
@@ -283,7 +282,7 @@ export function Problem() {
           viewport={{ once: true }}
           className="font-heading text-2xl tracking-tight text-[#1a1a1a] text-center mt-16"
         >
-          We built Angle Ads to fix this.
+          We built Angle Ads so you don&apos;t have to choose between great ads and a reasonable budget.
         </motion.p>
       </div>
     </section>

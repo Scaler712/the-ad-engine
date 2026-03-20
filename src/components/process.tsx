@@ -209,7 +209,8 @@ export function Process() {
           viewport={{ once: true }}
           className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
-          Your ads in 4 steps
+
+          From brief to live ads in 7 days
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}

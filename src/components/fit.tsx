@@ -29,7 +29,7 @@ export function Fit() {
           viewport={{ once: true }}
           className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-12 text-[#1a1a1a]"
         >
-          Is this for you?
+          Built for businesses that run paid ads
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-5">
