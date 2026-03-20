@@ -5,7 +5,7 @@ import { ArrowRight, Phone } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="contact" className="py-32 md:py-40 relative">
+    <section id="contact" className="py-16 md:py-24 relative">
       {/* Slightly warmer gradient overlay for the CTA section */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#e5ddd6]/30 to-[#ddd5ce]/40 pointer-events-none" />
 

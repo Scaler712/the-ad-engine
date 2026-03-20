@@ -19,7 +19,7 @@ const stats = [
 
 export function Results() {
   return (
-    <section id="results" className="py-32 md:py-40">
+    <section id="results" className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Card mock showing client values */}

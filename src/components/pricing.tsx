@@ -93,7 +93,7 @@ const retainerFeatures = [
 
 export function Pricing() {
   return (
-    <section id="packages" className="py-32 md:py-40">
+    <section id="packages" className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -116,7 +116,7 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-xs text-gray-400 mb-16"
+          className="text-center text-xs text-gray-400 mb-10"
         >
           For reference: a single UGC creator video costs $250-500.
           A video production shoot costs $3,000-5,000.

@@ -55,7 +55,7 @@ export function Work() {
   const visible = showAll ? allVideos : allVideos.slice(0, 8);
 
   return (
-    <section id="work" className="py-32 md:py-40">
+    <section id="work" className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -69,7 +69,7 @@ export function Work() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-center text-lg mb-20 max-w-sm mx-auto"
+          className="text-gray-400 text-center text-lg mb-12 max-w-sm mx-auto"
         >
           Every video was produced by our team — scripted, edited, delivered ad-ready.
         </motion.p>

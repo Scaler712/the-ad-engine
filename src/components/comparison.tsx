@@ -22,7 +22,7 @@ function CellValue({ val }: { val: string | boolean }) {
 
 export function Comparison() {
   return (
-    <section className="py-32 md:py-40">
+    <section className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -36,7 +36,7 @@ export function Comparison() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-center text-lg mb-16 max-w-md mx-auto"
+          className="text-gray-400 text-center text-lg mb-10 max-w-md mx-auto"
         >
           The Ad Engine vs. every other way to get video ads.
         </motion.p>

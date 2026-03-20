@@ -11,7 +11,7 @@ const pains = [
 
 export function Problem() {
   return (
-    <section className="py-32 md:py-40">
+    <section className="py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -27,7 +27,7 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-center text-lg mb-20 max-w-md mx-auto"
+          className="text-gray-400 text-center text-lg mb-12 max-w-md mx-auto"
         >
           So why aren&apos;t you running them?
         </motion.p>
@@ -42,7 +42,7 @@ export function Problem() {
               transition={{ delay: i * 0.06 }}
               className="card p-8"
             >
-              <p className="text-xl font-medium text-gray-800 mb-3">{item.pain}</p>
+              <p className="font-cal text-xl text-gray-800 mb-3">{item.pain}</p>
               <p className="text-sm text-gray-500 leading-relaxed">{item.detail}</p>
             </motion.div>
           ))}
@@ -52,7 +52,7 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-2xl font-light tracking-tight text-gray-700 text-center mt-20"
+          className="text-2xl font-light tracking-tight text-gray-700 text-center mt-12"
         >
           We built The Ad Engine to fix this.
         </motion.p>

@@ -19,13 +19,13 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-32 md:py-40">
+    <section id="faq" className="py-16 md:py-24">
       <div className="mx-auto max-w-2xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-6xl tracking-tight text-center mb-16 text-gray-800"
+          className="font-display text-4xl md:text-6xl tracking-tight text-center mb-10 text-gray-800"
         >
           Questions & answers
         </motion.h2>
@@ -37,7 +37,7 @@ export function FAQ() {
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between py-5 text-left group"
               >
-                <span className="text-base font-medium text-gray-800 pr-4">
+                <span className="font-cal text-base text-gray-800 pr-4">
                   {faq.q}
                 </span>
                 <ChevronDown

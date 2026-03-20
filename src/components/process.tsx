@@ -46,7 +46,7 @@ function Arrow() {
 
 export function Process() {
   return (
-    <section id="process" className="py-32 md:py-40">
+    <section id="process" className="py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -60,7 +60,7 @@ export function Process() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-center text-lg mb-20 max-w-sm mx-auto"
+          className="text-gray-400 text-center text-lg mb-12 max-w-sm mx-auto"
         >
           From zero content to ads live in under a week
         </motion.p>
@@ -86,7 +86,7 @@ export function Process() {
 
                 {/* Step info */}
                 <span className="text-4xl font-light text-gray-200 mb-2">{step.num}</span>
-                <h3 className="text-lg font-medium text-gray-800 mb-2">{step.title}</h3>
+                <h3 className="font-cal text-lg text-gray-800 mb-2">{step.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed max-w-[240px]">{step.desc}</p>
                 <span className="inline-block mt-4 text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full">{step.time}</span>
               </motion.div>
