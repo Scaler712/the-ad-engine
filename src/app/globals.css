@@ -35,8 +35,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Cal Sans — headings only. Always semibold (only weight available). */
 .font-cal {
-  font-family: var(--font-cal);
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 600;
+}
+
+/* Body text always Inter */
+p, li, span, a, button, input, textarea, label {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
 /* Marquee */
@@ -49,7 +56,7 @@ body {
   animation: marquee 40s linear infinite;
 }
 
-/* Video card */
+/* Video card hover */
 .video-card {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
 }
