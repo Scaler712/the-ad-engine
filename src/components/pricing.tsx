@@ -109,19 +109,19 @@ export function Pricing() {
               transition={{ delay: i * 0.08 }}
               className={`relative flex flex-col rounded-[20px] p-7 md:p-9 ${
                 pkg.popular
-                  ? "bg-navy text-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_16px_rgba(0,0,0,0.03)]"
+                  ? "card ring-2 ring-[#4a7dff] shadow-[0_4px_24px_rgba(74,125,255,0.12)]"
                   : "card"
               }`}
             >
               {pkg.popular && (
-                <span className="absolute top-4 right-4 text-[9px] font-medium bg-white/10 text-white/60 px-2.5 py-1 rounded-md">
+                <span className="absolute top-4 right-4 text-[9px] font-medium bg-[#4a7dff] text-white px-2.5 py-1 rounded-md">
                   MOST POPULAR
                 </span>
               )}
 
               <p
                 className={`text-xs uppercase tracking-wider mb-1 ${
-                  pkg.popular ? "text-white/30" : "text-gray-400"
+                  pkg.popular ? "text-[#4a7dff]" : "text-gray-400"
                 }`}
               >
                 {pkg.videos}
@@ -129,7 +129,7 @@ export function Pricing() {
 
               <h3
                 className={`font-semibold text-xl mb-4 ${
-                  pkg.popular ? "text-white" : "text-[#1a1a1a]"
+                  pkg.popular ? "text-[#1a1a1a]" : "text-[#1a1a1a]"
                 }`}
               >
                 {pkg.name}
@@ -138,14 +138,14 @@ export function Pricing() {
               <div className="mb-2">
                 <span
                   className={`text-4xl font-light tracking-tight ${
-                    pkg.popular ? "text-white" : "text-[#1a1a1a]"
+                    pkg.popular ? "text-[#1a1a1a]" : "text-[#1a1a1a]"
                   }`}
                 >
                   {pkg.price}
                 </span>
                 <span
                   className={`text-xs ml-2 ${
-                    pkg.popular ? "text-white/30" : "text-gray-400"
+                    pkg.popular ? "text-[#4a7dff]" : "text-gray-400"
                   }`}
                 >
                   {pkg.perVideo}
@@ -154,7 +154,7 @@ export function Pricing() {
 
               <p
                 className={`text-sm mb-6 leading-relaxed ${
-                  pkg.popular ? "text-white/40" : "text-gray-500"
+                  pkg.popular ? "text-gray-500" : "text-gray-500"
                 }`}
               >
                 {pkg.desc}
@@ -167,12 +167,12 @@ export function Pricing() {
                     <Check
                       size={12}
                       className={`shrink-0 mt-0.5 ${
-                        pkg.popular ? "text-white/25" : "text-gray-300"
+                        pkg.popular ? "text-[#4a7dff]/40" : "text-gray-300"
                       }`}
                     />
                     <span
                       className={
-                        pkg.popular ? "text-white/55" : "text-gray-500"
+                        pkg.popular ? "text-gray-600" : "text-gray-500"
                       }
                     >
                       {f}
@@ -192,14 +192,14 @@ export function Pricing() {
                 >
                   <span
                     className={`font-medium ${
-                      pkg.popular ? "text-white/60" : "text-[#1a1a1a]"
+                      pkg.popular ? "text-[#1a1a1a]" : "text-[#1a1a1a]"
                     }`}
                   >
                     BONUS:
                   </span>{" "}
                   <span
                     className={
-                      pkg.popular ? "text-white/40" : "text-gray-500"
+                      pkg.popular ? "text-gray-500" : "text-gray-500"
                     }
                   >
                     {pkg.bonus}

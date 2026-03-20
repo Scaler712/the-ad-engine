@@ -53,7 +53,7 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="py-24 md:py-32 -mt-16 relative z-10 border-t border-gray-200/50">
+    <section className="py-10 md:py-14 -mt-16 relative z-10">
       <div className="mx-auto max-w-3xl px-6">
         <div className="grid grid-cols-3 gap-8">
           {stats.map((stat, i) => (

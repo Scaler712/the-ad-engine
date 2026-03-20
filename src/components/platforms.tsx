@@ -48,7 +48,7 @@ const platforms = [
 
 export function Platforms() {
   return (
-    <section className="py-12">
+    <section className="py-6 pb-10">
       <div className="mx-auto max-w-3xl px-6">
         <p className="text-center text-[10px] text-gray-400 uppercase tracking-[0.2em] mb-5">
           Ads built for these platforms

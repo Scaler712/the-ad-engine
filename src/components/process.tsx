@@ -9,57 +9,19 @@ const STORAGE_BASE =
 /* ── Visual: Fake brief form ── */
 function BriefFormVisual() {
   return (
-    <div className="bg-white rounded-2xl p-5 shadow-[0_1px_4px_rgba(0,0,0,0.06)] w-full">
-      <div className="space-y-3">
-        <div>
-          <span className="text-[10px] text-gray-400 font-medium block mb-1">
-            Business name
-          </span>
-          <div className="h-8 bg-gray-50 rounded-lg border border-gray-100 px-3 flex items-center">
-            <span className="text-[11px] text-gray-400">Acme Dental Group</span>
-          </div>
+    <div className="bg-white rounded-xl p-4 shadow-[0_1px_4px_rgba(0,0,0,0.06)] w-full">
+      <div className="space-y-2">
+        <div className="h-7 bg-gray-50 rounded border border-gray-100 px-2.5 flex items-center">
+          <span className="text-[10px] text-gray-400">Acme Dental Group</span>
         </div>
-        <div>
-          <span className="text-[10px] text-gray-400 font-medium block mb-1">
-            Target audience
-          </span>
-          <div className="h-8 bg-gray-50 rounded-lg border border-gray-100 px-3 flex items-center">
-            <span className="text-[11px] text-gray-400">
-              Adults 30-55, considering implants
-            </span>
-          </div>
+        <div className="h-7 bg-gray-50 rounded border border-gray-100 px-2.5 flex items-center">
+          <span className="text-[10px] text-gray-400">Adults 30-55</span>
         </div>
-        <div>
-          <span className="text-[10px] text-gray-400 font-medium block mb-1">
-            What makes you different?
-          </span>
-          <div className="h-14 bg-gray-50 rounded-lg border border-gray-100 px-3 pt-2">
-            <span className="text-[11px] text-gray-400">
-              Same-day implants, free consultation...
-            </span>
-          </div>
+        <div className="h-7 bg-gray-50 rounded border border-gray-100 px-2.5 flex items-center">
+          <span className="text-[10px] text-gray-400">Same-day implants...</span>
         </div>
-        <div className="flex items-center gap-2 pt-1">
-          <div className="w-3.5 h-3.5 rounded border border-[#4a7dff] bg-[#4a7dff] flex items-center justify-center">
-            <svg
-              width="8"
-              height="8"
-              viewBox="0 0 8 8"
-              fill="none"
-              stroke="white"
-              strokeWidth="1.5"
-            >
-              <path d="M1.5 4L3.5 6L6.5 2" />
-            </svg>
-          </div>
-          <span className="text-[10px] text-gray-400">
-            Include competitor research
-          </span>
-        </div>
-        <div className="bg-[#4a7dff] rounded-lg py-2 text-center mt-1">
-          <span className="text-[11px] text-white font-medium">
-            Submit Brief
-          </span>
+        <div className="bg-[#4a7dff] rounded py-1.5 text-center">
+          <span className="text-[10px] text-white font-medium">Submit Brief</span>
         </div>
       </div>
     </div>
@@ -113,29 +75,21 @@ function VideoStackVisual() {
   );
 }
 
-/* ── Visual: Phone frame ── */
+/* ── Visual: Phone frame with real video ── */
 function PhoneVisual() {
   return (
     <div className="mx-auto w-[120px]">
       <div className="bg-[#1a1a1a] rounded-[16px] p-1.5 shadow-xl">
-        <div className="bg-gray-200 rounded-[12px] aspect-[9/16] flex items-center justify-center overflow-hidden">
-          <div className="text-center">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-gray-300 mx-auto mb-1"
-            >
-              <path
-                d="M8 5l10 7-10 7V5z"
-                fill="currentColor"
-              />
-            </svg>
-            <span className="text-[8px] text-gray-400 font-medium">
-              Ad-Ready
-            </span>
-          </div>
+        <div className="rounded-[12px] aspect-[9/16] overflow-hidden">
+          <video
+            src={`${STORAGE_BASE}/showcase-01.mp4`}
+            muted
+            autoPlay
+            loop
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>

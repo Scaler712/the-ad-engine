@@ -32,7 +32,7 @@ export function Comparison() {
             viewport={{ once: true }}
             className="card p-8 md:p-10"
           >
-            <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
+            <h3 className="font-cal text-xl text-[#1a1a1a] mb-2">
               Other Options
             </h3>
             <p className="text-sm text-gray-400 mb-8">
@@ -50,28 +50,25 @@ export function Comparison() {
                 "You might need to be on camera",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <X
-                    size={14}
-                    className="text-red-300 shrink-0 mt-0.5"
-                  />
+                  <X size={14} className="text-red-300 shrink-0 mt-0.5" />
                   <span className="text-sm text-gray-500">{item}</span>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right card: The Ad Engine */}
+          {/* Right card: The Ad Engine — light bg with blue left border */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="bg-navy text-white rounded-[20px] p-8 md:p-10 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_16px_rgba(0,0,0,0.03)]"
+            className="card p-8 md:p-10 border-l-4 border-l-[#4a7dff]"
           >
-            <h3 className="font-semibold text-xl text-white mb-2">
+            <h3 className="font-cal text-xl text-[#1a1a1a] mb-2">
               The Ad Engine
             </h3>
-            <p className="text-sm text-white/40 mb-8">
+            <p className="text-sm text-gray-400 mb-8">
               AI-powered video ad production at scale
             </p>
             <div className="space-y-4">
@@ -90,7 +87,7 @@ export function Comparison() {
                     size={14}
                     className="text-[#4a7dff] shrink-0 mt-0.5"
                   />
-                  <span className="text-sm text-white/60">{item}</span>
+                  <span className="text-sm text-gray-600">{item}</span>
                 </div>
               ))}
             </div>

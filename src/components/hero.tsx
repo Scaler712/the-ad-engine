@@ -46,7 +46,7 @@ export function Hero() {
               You fill out one questionnaire. We script, produce, and edit
               scroll-stopping AI video ads with written copy for every variation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
               <a
                 href="#packages"
                 className="bg-[#4a7dff] text-white px-8 py-3 rounded-xl text-sm font-medium hover:brightness-110 transition-all shadow-[0_0_20px_rgba(74,125,255,0.3)]"
