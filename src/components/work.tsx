@@ -91,7 +91,7 @@ export function Work() {
               onClick={() => setShowAll(true)}
               className="bg-[#eef0f5] text-sm font-medium text-[#1a1a1a] px-6 py-2.5 rounded-xl hover:bg-[#e4e6ed] transition-all"
             >
-              View All 20 Videos
+              View More
             </button>
           </div>
         )}
