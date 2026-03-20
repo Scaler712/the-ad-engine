@@ -133,7 +133,7 @@ export function Pricing() {
               transition={{ delay: i * 0.08 }}
               className={`relative flex flex-col rounded-2xl p-8 ${
                 pkg.popular
-                  ? "bg-navy text-white card-elevated shadow-[0_4px_16px_rgba(26,26,46,0.2),0_12px_40px_rgba(26,26,46,0.15)]"
+                  ? "bg-navy text-white shadow-[0_4px_16px_rgba(26,26,46,0.25),0_12px_40px_rgba(26,26,46,0.2)]"
                   : "card"
               }`}
             >
