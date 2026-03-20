@@ -283,7 +283,7 @@ export function Problem() {
           viewport={{ once: true }}
           className="font-heading text-2xl tracking-tight text-[#1a1a1a] text-center mt-16"
         >
-          We built The Ad Engine to fix this.
+          We built Angle Ads to fix this.
         </motion.p>
       </div>
     </section>

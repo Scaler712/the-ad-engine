@@ -40,7 +40,7 @@ export function Comparison() {
           viewport={{ once: true }}
           className="text-gray-400 text-center text-base mb-12 max-w-sm mx-auto"
         >
-          The Ad Engine vs. every other way to get video ads.
+          Angle Ads vs. every other way to get video ads.
         </motion.p>
 
         {/* iOS-style grouped rows */}
@@ -54,7 +54,7 @@ export function Comparison() {
           <div className="grid grid-cols-[1fr_100px_100px] px-5 py-3 border-b border-gray-100">
             <span />
             <span className="text-[11px] font-cal text-center text-[#4a7dff]">
-              Ad Engine
+              Angle Ads
             </span>
             <span className="text-[11px] font-medium text-center text-gray-400">
               Others
