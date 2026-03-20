@@ -30,8 +30,8 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
-        <a href="#" className="font-cal text-base text-[#1a1a1a]">
-          The Ad Engine
+        <a href="#" className="flex items-center">
+          <img src="/logo.png" alt="Angle Ads" className="h-8" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

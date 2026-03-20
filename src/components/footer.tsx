@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="py-12 border-t border-gray-200/50">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="font-cal text-base text-[#1a1a1a]">The Ad Engine</p>
+          <img src="/logo.png" alt="Angle Ads" className="h-7" />
           <div className="flex items-center gap-8">
             {["Process", "Packages", "Results", "FAQ"].map((label) => (
               <a
@@ -15,7 +15,7 @@ export function Footer() {
               </a>
             ))}
           </div>
-          <p className="text-xs text-gray-400">&copy; 2026 The Ad Engine</p>
+          <p className="text-xs text-gray-400">&copy; 2026 Angle Ads</p>
         </div>
       </div>
     </footer>
