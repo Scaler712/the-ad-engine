@@ -8,6 +8,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Cal Sans";
+  src: url("/fonts/CalSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-background: #f7f8fb;
   --color-foreground: #1a1a1a;
@@ -20,7 +28,6 @@
   --color-accent: #4a7dff;
   --font-sans: var(--font-inter);
   --font-cal: "Cal Sans", sans-serif;
-  --font-display: var(--font-serif);
 }
 
 * {
@@ -34,15 +41,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.font-display {
-  font-family: var(--font-display), Georgia, serif;
+/* Cal Sans Regular for big display headings */
+.font-heading {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
 }
 
-.font-display-italic {
-  font-family: var(--font-display), Georgia, serif;
-  font-style: italic;
-}
-
+/* Cal Sans SemiBold for card titles, nav, smaller headings */
 .font-cal {
   font-family: "Cal Sans", sans-serif;
   font-weight: 600;

@@ -27,7 +27,7 @@ export function Fit() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-5xl tracking-tight text-center mb-12 text-[#1a1a1a]"
+          className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-12 text-[#1a1a1a]"
         >
           Is this for you?
         </motion.h2>

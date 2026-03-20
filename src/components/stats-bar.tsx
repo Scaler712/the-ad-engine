@@ -65,7 +65,7 @@ export function StatsBar() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <p className="font-display text-3xl md:text-4xl tracking-tight text-[#1a1a1a]">
+              <p className="font-heading text-3xl md:text-4xl tracking-tight text-[#1a1a1a]">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </p>
               <p className="text-xs text-gray-400 mt-1.5 tracking-wide">

@@ -57,7 +57,7 @@ export function Results() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-4xl md:text-5xl tracking-tight text-[#1a1a1a] leading-[1.1] mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl tracking-tight text-[#1a1a1a] leading-[1.1] mb-6">
               One winning ad pays for
               <br />
               the entire package.
@@ -70,7 +70,7 @@ export function Results() {
             <div className="space-y-6">
               {stats.map((stat, i) => (
                 <div key={i} className="border-t border-gray-200 pt-4">
-                  <p className="font-display text-3xl tracking-tight text-[#1a1a1a]">
+                  <p className="font-heading text-3xl tracking-tight text-[#1a1a1a]">
                     {stat.number}
                   </p>
                   <p className="text-sm text-gray-500 mt-0.5">{stat.label}</p>

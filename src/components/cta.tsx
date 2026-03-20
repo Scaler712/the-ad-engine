@@ -17,7 +17,7 @@ export function CTA() {
               Your competitors aren&apos;t waiting.
             </span>
             <br />
-            <span className="font-display-italic text-[#4a7dff]">
+            <span className="font-heading text-[#4a7dff]">
               Neither should you.
             </span>
           </h2>

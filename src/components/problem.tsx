@@ -181,7 +181,7 @@ export function Problem() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-5xl tracking-tight text-left leading-[1.1] text-[#1a1a1a] mb-4"
+          className="font-heading text-4xl md:text-5xl tracking-tight text-left leading-[1.1] text-[#1a1a1a] mb-4"
         >
           You already know video ads
           <br />
@@ -281,7 +281,7 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-display text-2xl tracking-tight text-[#1a1a1a] text-center mt-16"
+          className="font-heading text-2xl tracking-tight text-[#1a1a1a] text-center mt-16"
         >
           We built The Ad Engine to fix this.
         </motion.p>

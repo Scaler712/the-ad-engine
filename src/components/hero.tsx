@@ -37,29 +37,15 @@ export function Hero() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="font-display-italic text-5xl md:text-7xl lg:text-8xl tracking-tight text-[#1a1a1a] leading-[1.05] mb-6">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-tight text-[#1a1a1a] leading-[1.05] mb-6">
               15 Video Ads. $1,500.
               <br />
               Done In 7 Days.
             </h1>
-            <p className="text-base md:text-lg text-gray-500 max-w-lg mx-auto mb-10 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-500 max-w-lg mx-auto mb-6 leading-relaxed">
               You fill out one questionnaire. We script, produce, and edit
               scroll-stopping AI video ads with written copy for every variation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
-              <a
-                href="#packages"
-                className="bg-[#4a7dff] text-white px-8 py-3 rounded-xl text-sm font-medium hover:brightness-110 transition-all shadow-[0_0_20px_rgba(74,125,255,0.3)]"
-              >
-                See Packages & Pricing
-              </a>
-              <a
-                href="#work"
-                className="text-gray-500 text-sm hover:text-gray-700 transition-colors underline underline-offset-4"
-              >
-                Watch 20 Examples
-              </a>
-            </div>
           </>
         }
       >
