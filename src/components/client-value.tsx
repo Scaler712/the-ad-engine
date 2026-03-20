@@ -11,51 +11,42 @@ const values = [
 
 export function ClientValue() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6">
+    <section className="py-28 md:py-36">
+      <div className="mx-auto max-w-2xl px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-3xl md:text-4xl font-bold text-center mb-14 text-navy"
+          className="font-cal text-3xl md:text-4xl text-navy mb-14"
         >
-          What&apos;s one new client worth
+          What&apos;s one new client
           <br />
-          <span className="text-navy/40">to your business?</span>
+          worth to your business?
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-2 gap-3 mb-10">
           {values.map((v, i) => (
             <motion.div
               key={v.type}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="p-6 rounded-xl border border-border hover:border-navy/20 transition-colors bg-white"
+              transition={{ delay: i * 0.06 }}
+              className="p-5 rounded-xl border border-border text-left"
             >
-              <p className="text-xs text-muted uppercase tracking-wider mb-2">
+              <p className="text-[11px] text-muted tracking-wide mb-1">
                 {v.type}
               </p>
-              <p className="text-2xl font-bold font-display text-navy">
-                {v.range}
-              </p>
+              <p className="font-cal text-xl text-navy">{v.range}</p>
             </motion.div>
           ))}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-muted text-center text-sm leading-relaxed max-w-2xl mx-auto"
-        >
-          Our Growth package costs $1,500. If just one ad from that batch brings
-          you one client, you&apos;ve already made your money back — many times
-          over. Compare that to $250-$500 per UGC creator video, $3,000-$5,000
-          for a single video shoot, or $4,000-$6,000/month for an in-house
-          content hire who produces half the volume.
-        </motion.p>
+        <p className="text-muted text-[13px] leading-relaxed max-w-lg mx-auto">
+          Our Growth package costs $1,500. One client from one ad pays for
+          itself many times over. Compare that to $3-5k for a video shoot or
+          $4-6k/month for an in-house hire.
+        </p>
       </div>
     </section>
   );

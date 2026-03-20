@@ -13,73 +13,53 @@ const painPoints = [
 
 export function Problem() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-xs uppercase tracking-[0.2em] text-muted font-semibold mb-4 text-center"
-        >
-          The Problem
-        </motion.p>
-
+    <section className="py-28 md:py-36">
+      <div className="mx-auto max-w-2xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="font-display text-3xl md:text-[2.75rem] font-bold text-center mb-4 leading-tight text-navy"
+          className="font-cal text-3xl md:text-[2.75rem] text-center mb-4 leading-[1.1] text-navy"
         >
           Your competitors are everywhere.
           <br />
-          <span className="text-navy/40">You&apos;re invisible.</span>
+          <span className="text-muted-foreground">You&apos;re invisible.</span>
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.15 }}
-          className="text-muted text-center text-base mb-14 max-w-lg mx-auto leading-relaxed"
+          className="text-muted text-center text-[15px] mb-16 max-w-md mx-auto leading-relaxed"
         >
           Every business knows video ads outperform everything else. But between
           the cost, the time, and the awkwardness of getting on camera — most
           businesses just... don&apos;t.
         </motion.p>
 
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {painPoints.map((point, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: -12 }}
+              initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="flex items-start gap-4 p-4 rounded-xl border border-border hover:border-navy/15 transition-colors group"
+              transition={{ delay: i * 0.05 }}
+              className="flex items-start gap-3.5 py-3.5 px-4 rounded-lg hover:bg-surface transition-colors"
             >
-              <span className="mt-0.5 w-5 h-5 rounded-full border border-red-200 flex items-center justify-center shrink-0">
-                <span className="text-red-400 text-xs">✕</span>
-              </span>
-              <p className="text-muted text-[14px] leading-relaxed group-hover:text-foreground transition-colors">
-                {point}
-              </p>
+              <span className="text-red-300 text-xs mt-1 shrink-0">✕</span>
+              <p className="text-[14px] text-muted leading-relaxed">{point}</p>
             </motion.div>
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="gradient-line max-w-xs mx-auto mb-8" />
-          <p className="text-lg md:text-xl font-semibold text-navy mb-2">
-            Every week without good creative is another week
-            <br className="hidden md:block" /> your competitors are stealing your clients.
-          </p>
-          <p className="text-navy font-bold text-lg mt-4">
+          <p className="font-cal text-xl md:text-2xl text-navy">
             We fix that — in days, not months.
           </p>
         </motion.div>

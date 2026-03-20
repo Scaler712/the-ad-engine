@@ -6,36 +6,23 @@ import { useEffect, useRef, useState } from "react";
 const STORAGE_BASE =
   "https://nhnnzplvkxqxbvkcjvai.supabase.co/storage/v1/object/public/Media/showcase";
 
-const heroVideos = ["showcase-01", "showcase-03", "showcase-07"];
-
 const allVideos = Array.from({ length: 20 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
   return {
     id: `showcase-${num}`,
     src: `${STORAGE_BASE}/showcase-${num}.mp4`,
-    isHero: heroVideos.includes(`showcase-${num}`),
   };
 });
 
-function VideoCard({
-  src,
-  isHero,
-  index,
-}: {
-  src: string;
-  isHero: boolean;
-  index: number;
-}) {
+function VideoCard({ src, index }: { src: string; index: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.2, rootMargin: "100px" }
     );
     if (containerRef.current) observer.observe(containerRef.current);
     return () => observer.disconnect();
@@ -53,26 +40,22 @@ function VideoCard({
   return (
     <motion.div
       ref={containerRef}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.05 }}
-      className={`video-card rounded-2xl overflow-hidden bg-surface border border-border group cursor-pointer ${
-        isHero ? "md:col-span-1 md:row-span-1" : ""
-      }`}
+      transition={{ delay: (index % 4) * 0.08 }}
+      className="video-card rounded-2xl overflow-hidden bg-surface border border-border/60 group cursor-pointer"
     >
-      <div className="aspect-[9/16] relative">
+      <div className="aspect-[9/16] relative bg-surface-raised">
         <video
           ref={videoRef}
-          src={src}
+          src={isVisible ? src : undefined}
           muted
           loop
           playsInline
           preload="none"
           className="w-full h-full object-cover"
         />
-        {/* Subtle overlay on hover */}
-        <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/5 transition-colors duration-300" />
       </div>
     </motion.div>
   );
@@ -80,67 +63,44 @@ function VideoCard({
 
 export function Work() {
   const [showAll, setShowAll] = useState(false);
-  const visibleVideos = showAll ? allVideos : allVideos.slice(0, 8);
+  const visible = showAll ? allVideos : allVideos.slice(0, 8);
 
   return (
-    <section id="work" className="py-24 md:py-32">
+    <section id="work" className="py-28 md:py-36">
       <div className="mx-auto max-w-6xl px-6">
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-xs uppercase tracking-[0.2em] text-muted font-semibold mb-4 text-center"
-        >
-          See The Work
-        </motion.p>
-
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="font-display text-3xl md:text-4xl font-bold text-center mb-4 text-navy"
+          className="font-cal text-3xl md:text-4xl text-center mb-4 text-navy"
         >
           Real ads. Real results.
         </motion.h2>
-
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.15 }}
-          className="text-muted text-center text-base mb-14 max-w-md mx-auto"
+          className="text-muted text-center text-[15px] mb-14 max-w-sm mx-auto"
         >
-          Every video below was produced by our team using AI — scripted,
-          edited, and delivered ad-ready.
+          Every video below was produced by our team — scripted, edited, and
+          delivered ad-ready.
         </motion.p>
 
-        {/* Video grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-          {visibleVideos.map((video, i) => (
-            <VideoCard
-              key={video.id}
-              src={video.src}
-              isHero={video.isHero}
-              index={i}
-            />
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+          {visible.map((video, i) => (
+            <VideoCard key={video.id} src={video.src} index={i} />
           ))}
         </div>
 
         {!showAll && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-10"
-          >
+          <div className="text-center mt-10">
             <button
               onClick={() => setShowAll(true)}
-              className="border border-border px-8 py-3 rounded-full text-sm font-semibold text-navy hover:bg-surface transition-colors"
+              className="text-[13px] font-medium text-navy border border-border px-6 py-2.5 rounded-lg hover:bg-surface transition-colors"
             >
               View All 20 Videos
             </button>
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

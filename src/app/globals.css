@@ -1,19 +1,26 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Cal Sans";
+  src: url("/fonts/CalSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-background: #ffffff;
-  --color-foreground: #0a0a0a;
-  --color-muted: #6b7280;
-  --color-muted-foreground: #9ca3af;
-  --color-border: #e5e7eb;
-  --color-border-light: #f3f4f6;
+  --color-foreground: #0f172a;
+  --color-muted: #64748b;
+  --color-muted-foreground: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
   --color-navy: #0f172a;
   --color-navy-light: #1e293b;
   --color-navy-muted: #334155;
   --color-surface: #f8fafc;
-  --color-surface-raised: #f1f5f9;
   --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
+  --font-cal: "Cal Sans", sans-serif;
 }
 
 * {
@@ -23,9 +30,13 @@
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.font-cal {
+  font-family: var(--font-cal);
 }
 
 /* Marquee */
@@ -38,33 +49,17 @@ body {
   animation: marquee 40s linear infinite;
 }
 
-/* Fade in */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-up {
-  animation: fade-up 0.7s ease-out forwards;
-}
-
-/* Video grid */
+/* Video card */
 .video-card {
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
 }
 .video-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
 }
 
-/* Subtle gradient line */
+/* Gradient line */
 .gradient-line {
-  background: linear-gradient(90deg, transparent, #0f172a, transparent);
+  background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
   height: 1px;
-}
-
-/* Process connector */
-.process-line {
-  background: linear-gradient(180deg, #e5e7eb 0%, #0f172a 50%, #e5e7eb 100%);
-  width: 1px;
 }
