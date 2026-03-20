@@ -21,8 +21,8 @@ const notFit = [
 
 export function Fit() {
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="mx-auto max-w-4xl px-6">
+    <section className="py-24 md:py-32">
+      <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,18 +32,23 @@ export function Fit() {
           Is this for you?
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-5">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#f5f5f7] rounded-2xl p-7 md:p-9"
+            className="card p-8 md:p-10"
           >
-            <p className="font-semibold text-lg text-[#1a1a1a] mb-6">Perfect fit</p>
+            <p className="font-cal text-lg text-[#1a1a1a] mb-6">
+              Perfect fit
+            </p>
             <ul className="space-y-4">
               {goodFit.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm">
-                  <Check size={14} className="text-green-500 shrink-0 mt-0.5" />
+                  <Check
+                    size={14}
+                    className="text-green-500 shrink-0 mt-0.5"
+                  />
                   <span className="text-gray-500 leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -54,9 +59,11 @@ export function Fit() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="bg-[#f5f5f7] rounded-2xl p-7 md:p-9"
+            className="card p-8 md:p-10"
           >
-            <p className="font-semibold text-lg text-[#1a1a1a] mb-6">Not the right fit</p>
+            <p className="font-cal text-lg text-[#1a1a1a] mb-6">
+              Not the right fit
+            </p>
             <ul className="space-y-4">
               {notFit.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm">

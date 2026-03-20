@@ -78,7 +78,7 @@ const retainerFeatures = [
 
 export function Pricing() {
   return (
-    <section id="packages" className="py-24 md:py-32 bg-white">
+    <section id="packages" className="py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -94,12 +94,12 @@ export function Pricing() {
           viewport={{ once: true }}
           className="text-gray-500 text-center text-base mb-12 max-w-md mx-auto"
         >
-          One-time purchase. No contracts. No commitments.
-          Come back when you need more.
+          One-time purchase. No contracts. No commitments. Come back when you
+          need more.
         </motion.p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
@@ -107,10 +107,10 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className={`relative flex flex-col rounded-2xl p-7 md:p-9 ${
+              className={`relative flex flex-col rounded-[20px] p-7 md:p-9 ${
                 pkg.popular
-                  ? "bg-navy text-white"
-                  : "bg-[#f5f5f7]"
+                  ? "bg-navy text-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_16px_rgba(0,0,0,0.03)]"
+                  : "card"
               }`}
             >
               {pkg.popular && (
@@ -190,10 +190,18 @@ export function Pricing() {
                       : "border-gray-300 bg-white/50"
                   }`}
                 >
-                  <span className={`font-medium ${pkg.popular ? "text-white/60" : "text-[#1a1a1a]"}`}>
+                  <span
+                    className={`font-medium ${
+                      pkg.popular ? "text-white/60" : "text-[#1a1a1a]"
+                    }`}
+                  >
                     BONUS:
                   </span>{" "}
-                  <span className={pkg.popular ? "text-white/40" : "text-gray-500"}>
+                  <span
+                    className={
+                      pkg.popular ? "text-white/40" : "text-gray-500"
+                    }
+                  >
                     {pkg.bonus}
                   </span>
                 </div>
@@ -219,10 +227,11 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-8 py-5 rounded-xl bg-[#f5f5f7]"
+          className="text-center mt-8 py-5 rounded-[20px] card"
         >
           <p className="text-sm text-gray-500">
-            Not happy? We revise until you are — or redo it from scratch. No questions asked.
+            Not happy? We revise until you are — or redo it from scratch. No
+            questions asked.
           </p>
         </motion.div>
 
@@ -231,7 +240,7 @@ export function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-8 rounded-2xl bg-[#f5f5f7] p-7 md:p-9"
+          className="mt-8 card p-7 md:p-9"
         >
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
             <div>
@@ -243,7 +252,9 @@ export function Pricing() {
               </h3>
             </div>
             <div className="md:text-right">
-              <span className="text-3xl font-light tracking-tight text-[#1a1a1a]">$2,500</span>
+              <span className="text-3xl font-light tracking-tight text-[#1a1a1a]">
+                $2,500
+              </span>
               <span className="text-gray-500 text-sm">/month</span>
               <p className="text-xs text-gray-400 mt-0.5">
                 Cancel anytime. No lock-in.
@@ -252,8 +263,9 @@ export function Pricing() {
           </div>
 
           <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xl">
-            Your agency charges this much and gives you 6 static images.
-            We deliver 20 video ads per month with strategy, copy, and weekly fresh creative.
+            Your agency charges this much and gives you 6 static images. We
+            deliver 20 video ads per month with strategy, copy, and weekly fresh
+            creative.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 mb-6">
@@ -277,7 +289,8 @@ export function Pricing() {
               Book a Strategy Call
             </a>
             <p className="text-xs text-gray-400 self-center">
-              First batch delivered within 48 hours of onboarding — or your first month is free.
+              First batch delivered within 48 hours of onboarding — or your
+              first month is free.
             </p>
           </div>
         </motion.div>

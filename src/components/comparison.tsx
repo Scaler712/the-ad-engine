@@ -3,26 +3,9 @@
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 
-const rows = [
-  { feature: "Cost per video", engine: "$100", ugc: "$250-500", agency: "$800-1,500", diy: "$2-11", production: "$2,700-9,500" },
-  { feature: "Videos per batch", engine: "5-30", ugc: "1-3", agency: "2-6/mo", diy: "Unlimited (raw)", production: "1-3" },
-  { feature: "Turnaround", engine: "7 days", ugc: "7-14 days", agency: "2-4 weeks", diy: "Hours", production: "3-6 weeks" },
-  { feature: "Script + strategy", engine: true, ugc: false, agency: true, diy: false, production: "Sometimes" },
-  { feature: "Ad copy included", engine: true, ugc: false, agency: "Sometimes", diy: false, production: false },
-  { feature: "Hook variations", engine: true, ugc: false, agency: false, diy: false, production: false },
-  { feature: "You on camera", engine: "Never", ugc: "Never", agency: "Sometimes", diy: "Sometimes", production: "Usually" },
-  { feature: "Contracts", engine: "None", ugc: "Per video", agency: "3-12 mo", diy: "Monthly sub", production: "Per project" },
-];
-
-function CellValue({ val }: { val: string | boolean }) {
-  if (val === true) return <Check size={14} className="text-[#1a1a1a] mx-auto" />;
-  if (val === false) return <X size={14} className="text-gray-300 mx-auto" />;
-  return <span>{val}</span>;
-}
-
 export function Comparison() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
@@ -36,46 +19,83 @@ export function Comparison() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-center text-lg mb-10 max-w-md mx-auto"
+          className="text-gray-500 text-center text-lg mb-12 max-w-md mx-auto"
         >
           The Ad Engine vs. every other way to get video ads.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-[#f5f5f7] rounded-2xl overflow-hidden"
-        >
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm min-w-[700px]">
-              <thead>
-                <tr className="border-b border-gray-200/60">
-                  <th className="text-left py-4 px-6 text-gray-400 font-normal text-xs w-[140px]" />
-                  <th className="py-4 px-4 text-center">
-                    <span className="text-sm font-medium text-[#1a1a1a] bg-white px-3 py-1 rounded-lg">The Ad Engine</span>
-                  </th>
-                  <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">UGC Creators</th>
-                  <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">Agency</th>
-                  <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">DIY AI</th>
-                  <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">Production</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((row, i) => (
-                  <tr key={i} className="border-b border-gray-200/40 last:border-0">
-                    <td className="py-3.5 px-6 text-gray-500 text-xs font-medium">{row.feature}</td>
-                    <td className="py-3.5 px-4 text-center font-medium text-[#1a1a1a] text-xs"><CellValue val={row.engine} /></td>
-                    <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.ugc} /></td>
-                    <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.agency} /></td>
-                    <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.diy} /></td>
-                    <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.production} /></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {/* Left card: Other options */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="card p-8 md:p-10"
+          >
+            <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
+              Other Options
+            </h3>
+            <p className="text-sm text-gray-400 mb-8">
+              UGC creators, agencies, production houses, DIY
+            </p>
+            <div className="space-y-4">
+              {[
+                "$250-500 per UGC creator video",
+                "$3,000-5,000 for a single video shoot",
+                "2-6 weeks turnaround time",
+                "No ad copy or strategy included",
+                "No hook variations for testing",
+                "3-12 month contracts required",
+                "Same recycled creatives month after month",
+                "You might need to be on camera",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <X
+                    size={14}
+                    className="text-red-300 shrink-0 mt-0.5"
+                  />
+                  <span className="text-sm text-gray-500">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right card: The Ad Engine */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08 }}
+            className="bg-navy text-white rounded-[20px] p-8 md:p-10 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_16px_rgba(0,0,0,0.03)]"
+          >
+            <h3 className="font-semibold text-xl text-white mb-2">
+              The Ad Engine
+            </h3>
+            <p className="text-sm text-white/40 mb-8">
+              AI-powered video ad production at scale
+            </p>
+            <div className="space-y-4">
+              {[
+                "$100 per video with the Growth package",
+                "15 videos for $1,500 (one-time)",
+                "7 day turnaround, first batch in 48hrs",
+                "Full ad copy package with every order",
+                "5 hook variations per concept",
+                "No contracts, no commitments",
+                "Fresh creative every week (retainer)",
+                "You never step in front of a camera",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <Check
+                    size={14}
+                    className="text-[#4a7dff] shrink-0 mt-0.5"
+                  />
+                  <span className="text-sm text-white/60">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

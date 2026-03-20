@@ -5,7 +5,7 @@ import { ArrowRight, Phone } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-[#f5f5f7]">
+    <section id="contact" className="py-24 md:py-32 bg-[#eaecf3]">
       <div className="mx-auto max-w-3xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -45,7 +45,8 @@ export function CTA() {
           </div>
 
           <p className="text-xs text-gray-400">
-            No contracts. No commitments. If the work isn&apos;t right, we redo it.
+            No contracts. No commitments. If the work isn&apos;t right, we redo
+            it.
           </p>
         </motion.div>
       </div>

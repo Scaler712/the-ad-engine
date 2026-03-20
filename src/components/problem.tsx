@@ -2,22 +2,186 @@
 
 import { motion } from "framer-motion";
 
-const pains = [
-  { pain: "Too expensive", detail: "A single video shoot costs $3,000-$5,000. UGC creators charge $250-500 per video. You need 10-15 variations to test properly." },
-  { pain: "Too slow", detail: "Coordinate talent, schedule shoots, wait for edits. By the time creative ships, your competitors have already tested 30 ads." },
-  { pain: "You don't want to be on camera", detail: "And honestly, you shouldn't have to be. The ad creative should sell — not your face." },
-  { pain: "Your agency recycles the same creatives", detail: "You're paying $3-5k/month. They gave you 6 static images and 2 videos in month one. You're still running them in month four." },
-];
+/* ── Visual artifact: Fake invoice ── */
+function InvoiceArtifact() {
+  return (
+    <div className="bg-white rounded-2xl p-5 shadow-[0_1px_4px_rgba(0,0,0,0.06)] text-left w-full">
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+          Invoice #2847
+        </span>
+        <span className="text-[10px] text-red-400 font-medium">Overdue</span>
+      </div>
+      <div className="space-y-2.5">
+        {[
+          { item: "Video Production (1 day shoot)", cost: "$4,500" },
+          { item: "UGC Creator x 3 videos", cost: "$750" },
+          { item: "Professional editing", cost: "$1,200" },
+          { item: "Script copywriting", cost: "$600" },
+        ].map((row) => (
+          <div
+            key={row.item}
+            className="flex items-center justify-between py-1.5 border-b border-dashed border-gray-100"
+          >
+            <span className="text-[11px] text-gray-500">{row.item}</span>
+            <span className="text-[11px] font-medium text-[#1a1a1a]">
+              {row.cost}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-200">
+        <span className="text-xs font-semibold text-[#1a1a1a]">Total</span>
+        <span className="text-sm font-semibold text-[#1a1a1a]">$7,050</span>
+      </div>
+    </div>
+  );
+}
+
+/* ── Visual artifact: Fake timeline ── */
+function TimelineArtifact() {
+  const weeks = [
+    { label: "Brief", status: "done" },
+    { label: "Casting", status: "done" },
+    { label: "Shoot", status: "delayed" },
+    { label: "Edit v1", status: "waiting" },
+    { label: "Revisions", status: "waiting" },
+    { label: "Delivery", status: "waiting" },
+  ];
+  return (
+    <div className="bg-white rounded-2xl p-5 shadow-[0_1px_4px_rgba(0,0,0,0.06)] w-full">
+      <div className="flex items-center gap-2 mb-4">
+        <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+          Project Timeline
+        </span>
+        <span className="text-[10px] text-amber-500 font-medium bg-amber-50 px-1.5 py-0.5 rounded">
+          3 weeks behind
+        </span>
+      </div>
+      <div className="space-y-2">
+        {weeks.map((w) => (
+          <div key={w.label} className="flex items-center gap-3">
+            <div
+              className={`w-2 h-2 rounded-full shrink-0 ${
+                w.status === "done"
+                  ? "bg-green-400"
+                  : w.status === "delayed"
+                  ? "bg-amber-400"
+                  : "bg-gray-200"
+              }`}
+            />
+            <div
+              className={`h-2 rounded-full flex-1 ${
+                w.status === "done"
+                  ? "bg-green-100"
+                  : w.status === "delayed"
+                  ? "bg-amber-100"
+                  : "bg-gray-100"
+              }`}
+              style={{
+                width:
+                  w.status === "done"
+                    ? "100%"
+                    : w.status === "delayed"
+                    ? "60%"
+                    : "0%",
+              }}
+            />
+            <span className="text-[10px] text-gray-400 w-16 text-right shrink-0">
+              {w.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ── Visual artifact: No camera ── */
+function NoCameraArtifact() {
+  return (
+    <div className="bg-white rounded-2xl p-5 shadow-[0_1px_4px_rgba(0,0,0,0.06)] w-full flex flex-col items-center justify-center">
+      <div className="relative mb-3">
+        <svg
+          width="64"
+          height="64"
+          viewBox="0 0 64 64"
+          fill="none"
+          className="text-gray-300"
+        >
+          <rect
+            x="4"
+            y="16"
+            width="40"
+            height="32"
+            rx="4"
+            stroke="currentColor"
+            strokeWidth="2"
+          />
+          <path d="M44 28l16-8v24l-16-8V28z" stroke="currentColor" strokeWidth="2" />
+        </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+            <line
+              x1="12"
+              y1="12"
+              x2="60"
+              y2="60"
+              stroke="#ef4444"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+      </div>
+      <div className="bg-gray-100 rounded-xl px-4 py-2 mt-1">
+        <span className="text-[11px] text-gray-400 font-medium">
+          Camera not required
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* ── Visual artifact: Recycled creatives ── */
+function RecycledArtifact() {
+  return (
+    <div className="bg-white rounded-2xl p-5 shadow-[0_1px_4px_rgba(0,0,0,0.06)] w-full">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+          Your agency&apos;s creative library
+        </span>
+      </div>
+      <div className="grid grid-cols-3 gap-1.5">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <div
+            key={i}
+            className="aspect-square rounded-lg bg-gray-100 flex items-center justify-center"
+          >
+            <span className="text-[9px] text-gray-300 font-medium">
+              Same ad
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="mt-3 text-center">
+        <span className="text-[10px] text-gray-300">
+          Month 1 ... Month 4 ... still running these
+        </span>
+      </div>
+    </div>
+  );
+}
 
 export function Problem() {
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="mx-auto max-w-4xl px-6">
+    <section className="py-24 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-5xl tracking-tight text-center leading-[1.1] text-[#1a1a1a] mb-5"
+          className="font-display text-4xl md:text-5xl tracking-tight text-left leading-[1.1] text-[#1a1a1a] mb-4"
         >
           You already know video ads
           <br />
@@ -27,32 +191,97 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-center text-lg mb-12 max-w-md mx-auto"
+          className="text-gray-500 text-left text-lg mb-12 max-w-md"
         >
           So why aren&apos;t you running them?
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {pains.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              className="bg-[#f5f5f7] rounded-2xl p-7 md:p-9"
-            >
-              <p className="font-semibold text-xl text-[#1a1a1a] mb-3">{item.pain}</p>
-              <p className="text-sm text-gray-500 leading-relaxed">{item.detail}</p>
-            </motion.div>
-          ))}
+        {/* Bento grid: 2 rows, unequal cards */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+          {/* Row 1: Left ~7col, Right ~5col */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="card p-8 md:p-10 md:col-span-7"
+          >
+            <div className="mb-6">
+              <InvoiceArtifact />
+            </div>
+            <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
+              Too expensive
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              A single video shoot costs $3,000-$5,000. UGC creators charge
+              $250-500 per video. You need 10-15 variations to test properly.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.06 }}
+            className="card p-8 md:p-10 md:col-span-5"
+          >
+            <div className="mb-6">
+              <TimelineArtifact />
+            </div>
+            <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
+              Too slow
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              Coordinate talent, schedule shoots, wait for edits. By the time
+              creative ships, your competitors have already tested 30 ads.
+            </p>
+          </motion.div>
+
+          {/* Row 2: Left ~5col, Right ~7col */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.12 }}
+            className="card p-8 md:p-10 md:col-span-5"
+          >
+            <div className="mb-6">
+              <NoCameraArtifact />
+            </div>
+            <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
+              You don&apos;t want to be on camera
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              And honestly, you shouldn&apos;t have to be. The ad creative
+              should sell, not your face.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.18 }}
+            className="card p-8 md:p-10 md:col-span-7"
+          >
+            <div className="mb-6">
+              <RecycledArtifact />
+            </div>
+            <h3 className="font-semibold text-xl text-[#1a1a1a] mb-2">
+              Your agency recycles the same creatives
+            </h3>
+            <p className="text-sm text-gray-500 leading-relaxed">
+              You&apos;re paying $3-5k/month. They gave you 6 static images and
+              2 videos in month one. You&apos;re still running them in month
+              four.
+            </p>
+          </motion.div>
         </div>
 
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-2xl font-light tracking-tight text-[#1a1a1a] text-center mt-12"
+          className="font-display text-2xl tracking-tight text-[#1a1a1a] text-center mt-16"
         >
           We built The Ad Engine to fix this.
         </motion.p>

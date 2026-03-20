@@ -19,7 +19,7 @@ const stats = [
 
 export function Results() {
   return (
-    <section id="results" className="py-24 md:py-32 bg-white">
+    <section id="results" className="py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Card mock showing client values */}
@@ -27,9 +27,11 @@ export function Results() {
             initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-[#f5f5f7] rounded-2xl p-7 md:p-9"
+            className="card p-7 md:p-9"
           >
-            <p className="text-xs text-gray-400 uppercase tracking-wider mb-4">Client value per industry</p>
+            <p className="text-xs text-gray-400 uppercase tracking-wider mb-4">
+              Client value per industry
+            </p>
             <div className="space-y-3">
               {values.map((v, i) => (
                 <motion.div
@@ -41,7 +43,9 @@ export function Results() {
                   className="flex items-center justify-between py-3 border-b border-gray-200/60 last:border-0"
                 >
                   <span className="text-sm text-gray-500">{v.industry}</span>
-                  <span className="text-sm font-medium text-[#1a1a1a]">{v.range}</span>
+                  <span className="text-sm font-medium text-[#1a1a1a]">
+                    {v.range}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -66,15 +70,18 @@ export function Results() {
             <div className="space-y-6">
               {stats.map((stat, i) => (
                 <div key={i} className="border-t border-gray-200 pt-4">
-                  <p className="font-display text-3xl tracking-tight text-[#1a1a1a]">{stat.number}</p>
+                  <p className="font-display text-3xl tracking-tight text-[#1a1a1a]">
+                    {stat.number}
+                  </p>
                   <p className="text-sm text-gray-500 mt-0.5">{stat.label}</p>
                 </div>
               ))}
             </div>
 
             <p className="text-xs text-gray-400 mt-8 leading-relaxed max-w-sm">
-              Compare $1,500 for 15 tested video ads to $250-500 per UGC creator video,
-              $3-5k for a video shoot, or $4-6k/month for an in-house content hire.
+              Compare $1,500 for 15 tested video ads to $250-500 per UGC creator
+              video, $3-5k for a video shoot, or $4-6k/month for an in-house
+              content hire.
             </p>
           </motion.div>
         </div>

@@ -1,24 +1,48 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 
-function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string }) {
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v).toLocaleString());
-  const [display, setDisplay] = useState("0");
+function AnimatedNumber({
+  value,
+  suffix = "",
+}: {
+  value: number;
+  suffix?: string;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  useEffect(() => { const u = rounded.on("change", (v) => setDisplay(v)); return u; }, [rounded]);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const [display, setDisplay] = useState(value.toLocaleString());
+
   useEffect(() => {
-    if (hasAnimated) return;
-    const observer = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { animate(count, value, { duration: 2, ease: "easeOut" }); setHasAnimated(true); observer.disconnect(); }
-    }, { threshold: 0.5 });
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [count, value, hasAnimated]);
-  return <span ref={ref} className="tabular-nums">{display}{suffix}</span>;
+    if (!isInView) return;
+
+    let start = 0;
+    const duration = 2000;
+    const startTime = performance.now();
+
+    function tick(now: number) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * value);
+
+      setDisplay(current.toLocaleString());
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }, [isInView, value]);
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {display}
+      {suffix}
+    </span>
+  );
 }
 
 const stats = [
@@ -29,7 +53,7 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="py-24 md:py-32 -mt-16 relative z-10 bg-white border-t border-gray-100">
+    <section className="py-24 md:py-32 -mt-16 relative z-10 border-t border-gray-200/50">
       <div className="mx-auto max-w-3xl px-6">
         <div className="grid grid-cols-3 gap-8">
           {stats.map((stat, i) => (
