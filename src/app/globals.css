@@ -14,14 +14,13 @@
   --color-muted: #6b7280;
   --color-muted-foreground: #9ca3af;
   --color-border: rgba(0,0,0,0.06);
-  --color-border-subtle: rgba(0,0,0,0.04);
   --color-navy: #1a1a2e;
   --color-navy-light: #2d2d44;
   --color-surface: #f8f9fc;
-  --color-surface-solid: #f0f3f9;
   --color-card: #ffffff;
   --font-sans: var(--font-inter);
   --font-cal: "Cal Sans", sans-serif;
+  --font-display: var(--font-serif);
 }
 
 * {
@@ -29,12 +28,18 @@
 }
 
 body {
-  background: linear-gradient(180deg, #c5d0e6 0%, #d5dcea 20%, #dde2ee 40%, #e8ddd8 70%, #dde2ee 100%);
+  background: linear-gradient(180deg, #b8c6e0 0%, #c8d4ea 15%, #dde2ee 35%, #e8ddd4 55%, #ebd5c8 70%, #ddd8d4 85%, #d5daea 100%);
   background-attachment: fixed;
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Serif display headings — like cluely */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
 }
 
 .font-cal {
@@ -66,12 +71,4 @@ p, li, span, a, button, input, textarea, label {
 .video-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-}
-
-/* Gradient text */
-.text-gradient {
-  background: linear-gradient(180deg, #374151 0%, #4b5563 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }

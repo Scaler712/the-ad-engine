@@ -19,7 +19,7 @@ export function CTA() {
             Limited to 10 new clients per month
           </p>
 
-          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-gray-800 leading-[1.1] mb-6">
+          <h2 className="font-display text-4xl md:text-6xl tracking-tight text-gray-800 leading-[1.1] mb-6">
             Your competitors aren&apos;t waiting.
             <br />
             Neither should you.

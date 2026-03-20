@@ -53,7 +53,7 @@ export function Results() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-light tracking-tight text-gray-800 leading-[1.1] mb-6">
+            <h2 className="font-display text-4xl md:text-6xl tracking-tight text-gray-800 leading-[1.1] mb-6">
               One winning ad pays for
               <br />
               the entire package.

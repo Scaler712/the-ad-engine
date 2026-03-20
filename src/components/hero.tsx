@@ -40,7 +40,7 @@ export function Hero() {
             <p className="text-xs uppercase tracking-[0.25em] text-gray-400 mb-6">
               AI-Powered Ad Creative Studio
             </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-gray-800 leading-[1.08] mb-6">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-tight text-gray-800 leading-[1.05] mb-6">
               15 Video Ads. $1,500.
               <br />
               Done In 7 Days.

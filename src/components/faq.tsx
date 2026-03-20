@@ -25,7 +25,7 @@ export function FAQ() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-light tracking-tight text-center mb-16 text-gray-800"
+          className="font-display text-4xl md:text-6xl tracking-tight text-center mb-16 text-gray-800"
         >
           Questions & answers
         </motion.h2>
