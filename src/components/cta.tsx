@@ -5,47 +5,49 @@ import { ArrowRight, Phone } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="contact" className="py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6">
+    <section id="contact" className="py-32 md:py-40 relative">
+      {/* Slightly warmer gradient overlay for the CTA section */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#e5ddd6]/30 to-[#ddd5ce]/40 pointer-events-none" />
+
+      <div className="mx-auto max-w-3xl px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass-strong rounded-3xl p-10 md:p-16 text-center"
         >
-          <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-6">
             Limited to 10 new clients per month
           </p>
 
-          <h2 className="font-cal text-3xl md:text-[2.5rem] mb-4 leading-[1.1] text-gradient">
+          <h2 className="text-3xl md:text-5xl font-light tracking-tight text-gray-800 leading-[1.1] mb-6">
             Your competitors aren&apos;t waiting.
             <br />
             Neither should you.
           </h2>
 
-          <p className="text-muted text-[14px] mb-10 max-w-md mx-auto leading-relaxed opacity-60">
+          <p className="text-gray-500 text-base mb-10 max-w-md leading-relaxed">
             Every week without fresh creative is a week they&apos;re taking your
             clients. Pick a package or book a call.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+          <div className="flex flex-col sm:flex-row items-start gap-3 mb-8">
             <a
               href="#packages"
-              className="bg-navy text-white px-7 py-3 rounded-lg text-[13px] font-medium hover:bg-navy-light transition-all flex items-center gap-2 shadow-sm"
+              className="bg-navy text-white px-8 py-3 rounded-xl text-sm font-medium hover:bg-navy-light transition-all flex items-center gap-2"
             >
               Choose Your Package
-              <ArrowRight size={13} />
+              <ArrowRight size={14} />
             </a>
             <a
               href="#contact"
-              className="glass text-navy px-7 py-3 rounded-lg text-[13px] font-medium hover:bg-white/70 transition-all flex items-center gap-2"
+              className="card text-gray-600 px-8 py-3 rounded-xl text-sm font-medium hover:shadow-md transition-all flex items-center gap-2"
             >
-              <Phone size={13} />
+              <Phone size={14} />
               Book a Strategy Call
             </a>
           </div>
 
-          <p className="text-[11px] text-muted-foreground">
+          <p className="text-xs text-gray-400">
             No contracts. No commitments. If the work isn&apos;t right, we redo it.
           </p>
         </motion.div>

@@ -11,13 +11,13 @@ const pains = [
 
 export function Problem() {
   return (
-    <section className="py-24 md:py-32">
-      <div className="mx-auto max-w-3xl px-6">
+    <section className="py-32 md:py-40">
+      <div className="mx-auto max-w-4xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-cal text-3xl md:text-[2.5rem] text-center leading-[1.1] text-gradient mb-4"
+          className="text-3xl md:text-5xl font-light tracking-tight text-center leading-[1.1] text-gray-800 mb-5"
         >
           You already know video ads
           <br />
@@ -27,12 +27,12 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-muted text-center text-[15px] mb-16 max-w-md mx-auto opacity-60"
+          className="text-gray-400 text-center text-lg mb-20 max-w-md mx-auto"
         >
           So why aren&apos;t you running them?
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {pains.map((item, i) => (
             <motion.div
               key={i}
@@ -40,10 +40,10 @@ export function Problem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
-              className="glass rounded-2xl p-6 hover:bg-white/60 transition-all"
+              className="card p-8"
             >
-              <p className="font-cal text-[15px] text-navy mb-2">{item.pain}</p>
-              <p className="text-[12px] text-muted leading-relaxed">{item.detail}</p>
+              <p className="text-xl font-medium text-gray-800 mb-3">{item.pain}</p>
+              <p className="text-sm text-gray-500 leading-relaxed">{item.detail}</p>
             </motion.div>
           ))}
         </div>
@@ -52,7 +52,7 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="font-cal text-xl text-gradient text-center mt-14"
+          className="text-2xl font-light tracking-tight text-gray-700 text-center mt-20"
         >
           We built The Ad Engine to fix this.
         </motion.p>

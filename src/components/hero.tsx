@@ -37,29 +37,28 @@ export function Hero() {
       <ContainerScroll
         titleComponent={
           <>
-            <p className="text-[11px] uppercase tracking-[0.25em] text-muted mb-5">
+            <p className="text-xs uppercase tracking-[0.25em] text-gray-400 mb-6">
               AI-Powered Ad Creative Studio
             </p>
-            <h1 className="font-cal text-4xl md:text-[5rem] text-navy leading-[1.05] mb-5">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-gray-800 leading-[1.08] mb-6">
               15 Video Ads. $1,500.
               <br />
               Done In 7 Days.
             </h1>
-            <p className="text-[15px] text-muted max-w-lg mx-auto mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-500 max-w-lg mx-auto mb-10 leading-relaxed">
               You fill out one questionnaire. We script, produce, and edit
               scroll-stopping AI video ads with written copy for every variation.
-              No camera. No actors. No $5k agency retainer.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="#packages"
-                className="bg-navy text-white px-7 py-3 rounded-lg text-[13px] font-medium hover:bg-navy-light transition-all"
+                className="bg-blue-500 text-white px-8 py-3 rounded-xl text-sm font-medium hover:bg-blue-600 transition-all shadow-sm"
               >
                 See Packages & Pricing
               </a>
               <a
                 href="#work"
-                className="border border-border px-7 py-3 rounded-lg text-[13px] font-medium text-navy hover:bg-surface transition-all"
+                className="text-gray-500 text-sm hover:text-gray-700 transition-colors underline underline-offset-4"
               >
                 Watch 20 Examples
               </a>

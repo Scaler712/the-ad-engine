@@ -33,7 +33,7 @@ function VideoCard({ src, index }: { src: string; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: (index % 4) * 0.06 }}
-      className="video-card rounded-2xl overflow-hidden glass group cursor-pointer"
+      className="video-card card rounded-2xl overflow-hidden group cursor-pointer"
     >
       <div className="aspect-[9/16] relative">
         <video
@@ -55,13 +55,13 @@ export function Work() {
   const visible = showAll ? allVideos : allVideos.slice(0, 8);
 
   return (
-    <section id="work" className="py-24 md:py-32">
+    <section id="work" className="py-32 md:py-40">
       <div className="mx-auto max-w-6xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-cal text-3xl md:text-4xl text-center mb-4 text-gradient"
+          className="text-3xl md:text-5xl font-light tracking-tight text-center mb-5 text-gray-800"
         >
           Real ads. Real results.
         </motion.h2>
@@ -69,22 +69,22 @@ export function Work() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-muted text-center text-[14px] mb-14 max-w-sm mx-auto opacity-60"
+          className="text-gray-400 text-center text-lg mb-20 max-w-sm mx-auto"
         >
           Every video was produced by our team — scripted, edited, delivered ad-ready.
         </motion.p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
           {visible.map((video, i) => (
             <VideoCard key={video.id} src={video.src} index={i} />
           ))}
         </div>
 
         {!showAll && (
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(true)}
-              className="glass text-[13px] font-medium text-navy px-6 py-2.5 rounded-lg hover:bg-white/70 transition-colors"
+              className="card text-sm font-medium text-gray-600 px-6 py-2.5 rounded-xl hover:shadow-md transition-all"
             >
               View All 20 Videos
             </button>

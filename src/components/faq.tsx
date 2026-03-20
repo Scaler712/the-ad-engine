@@ -19,30 +19,30 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 md:py-32">
-      <div className="mx-auto max-w-xl px-6">
+    <section id="faq" className="py-32 md:py-40">
+      <div className="mx-auto max-w-2xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-cal text-3xl md:text-4xl text-center mb-14 text-gradient"
+          className="text-3xl md:text-5xl font-light tracking-tight text-center mb-16 text-gray-800"
         >
           Questions & answers
         </motion.h2>
 
-        <div className="glass-strong rounded-2xl overflow-hidden divide-y divide-black/[0.04]">
+        <div className="divide-y divide-gray-200/60">
           {faqs.map((faq, i) => (
             <div key={i}>
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between py-4 px-5 text-left group hover:bg-white/30 transition-colors"
+                className="w-full flex items-center justify-between py-5 text-left group"
               >
-                <span className="text-[13px] font-medium text-navy pr-4">
+                <span className="text-base font-medium text-gray-800 pr-4">
                   {faq.q}
                 </span>
                 <ChevronDown
-                  size={14}
-                  className={`shrink-0 text-muted-foreground transition-transform duration-200 ${
+                  size={16}
+                  className={`shrink-0 text-gray-400 transition-transform duration-200 ${
                     openIndex === i ? "rotate-180" : ""
                   }`}
                 />
@@ -56,7 +56,7 @@ export function FAQ() {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-5 pb-4 text-[12px] text-muted leading-relaxed">
+                    <p className="pb-5 text-sm text-gray-500 leading-relaxed">
                       {faq.a}
                     </p>
                   </motion.div>

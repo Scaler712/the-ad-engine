@@ -15,20 +15,20 @@ const rows = [
 ];
 
 function CellValue({ val }: { val: string | boolean }) {
-  if (val === true) return <Check size={13} className="text-navy mx-auto" />;
-  if (val === false) return <X size={13} className="text-muted-foreground/25 mx-auto" />;
+  if (val === true) return <Check size={14} className="text-gray-800 mx-auto" />;
+  if (val === false) return <X size={14} className="text-gray-300 mx-auto" />;
   return <span>{val}</span>;
 }
 
 export function Comparison() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-32 md:py-40">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-cal text-3xl md:text-4xl text-center mb-4 text-gradient"
+          className="text-3xl md:text-5xl font-light tracking-tight text-center mb-5 text-gray-800"
         >
           How it compares
         </motion.h2>
@@ -36,7 +36,7 @@ export function Comparison() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-muted text-center text-[14px] mb-12 max-w-md mx-auto opacity-60"
+          className="text-gray-400 text-center text-lg mb-16 max-w-md mx-auto"
         >
           The Ad Engine vs. every other way to get video ads.
         </motion.p>
@@ -45,31 +45,31 @@ export function Comparison() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass-strong rounded-2xl overflow-hidden"
+          className="card rounded-2xl overflow-hidden"
         >
           <div className="overflow-x-auto">
-            <table className="w-full text-[11px] min-w-[700px]">
+            <table className="w-full text-sm min-w-[700px]">
               <thead>
-                <tr className="border-b border-black/5">
-                  <th className="text-left py-3.5 px-5 text-muted font-medium w-[140px]" />
-                  <th className="py-3.5 px-3 text-center">
-                    <span className="font-cal text-[12px] text-navy bg-navy/5 px-3 py-1 rounded-md">The Ad Engine</span>
+                <tr className="border-b border-gray-100">
+                  <th className="text-left py-4 px-6 text-gray-400 font-normal text-xs w-[140px]" />
+                  <th className="py-4 px-4 text-center">
+                    <span className="text-sm font-medium text-gray-800 bg-gray-50 px-3 py-1 rounded-lg">The Ad Engine</span>
                   </th>
-                  <th className="py-3.5 px-3 text-center text-muted font-medium">UGC Creators</th>
-                  <th className="py-3.5 px-3 text-center text-muted font-medium">Agency</th>
-                  <th className="py-3.5 px-3 text-center text-muted font-medium">DIY AI</th>
-                  <th className="py-3.5 px-3 text-center text-muted font-medium">Production</th>
+                  <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">UGC Creators</th>
+                  <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">Agency</th>
+                  <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">DIY AI</th>
+                  <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">Production</th>
                 </tr>
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={i} className="border-b border-black/[0.03] last:border-0">
-                    <td className="py-3 px-5 text-muted font-medium">{row.feature}</td>
-                    <td className="py-3 px-3 text-center font-semibold text-navy"><CellValue val={row.engine} /></td>
-                    <td className="py-3 px-3 text-center text-muted"><CellValue val={row.ugc} /></td>
-                    <td className="py-3 px-3 text-center text-muted"><CellValue val={row.agency} /></td>
-                    <td className="py-3 px-3 text-center text-muted"><CellValue val={row.diy} /></td>
-                    <td className="py-3 px-3 text-center text-muted"><CellValue val={row.production} /></td>
+                  <tr key={i} className="border-b border-gray-50 last:border-0">
+                    <td className="py-3.5 px-6 text-gray-500 text-xs font-medium">{row.feature}</td>
+                    <td className="py-3.5 px-4 text-center font-medium text-gray-800 text-xs"><CellValue val={row.engine} /></td>
+                    <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.ugc} /></td>
+                    <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.agency} /></td>
+                    <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.diy} /></td>
+                    <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.production} /></td>
                   </tr>
                 ))}
               </tbody>

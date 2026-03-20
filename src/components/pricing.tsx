@@ -13,7 +13,7 @@ const packages = [
     popular: false,
     features: [
       "5 AI video ads (15-45 sec)",
-      "1 concept × 5 hook variations",
+      "1 concept x 5 hook variations",
       "Direct-response scripting",
       "Professional editing + captions + music",
       "Written ad copy (primary text + headline)",
@@ -37,7 +37,7 @@ const packages = [
     popular: true,
     features: [
       "15 AI video ads",
-      "3 concepts × 5 hook variations",
+      "3 concepts x 5 hook variations",
       "Multiple AI presenters per concept",
       "Direct-response scripting for each concept",
       "Full editing + captions + branding + music",
@@ -61,11 +61,11 @@ const packages = [
     popular: false,
     features: [
       "30 AI video ads",
-      "5 concepts × 6 hook variations",
+      "5 concepts x 6 hook variations",
       "Full format mix (talking head, testimonial, educational, FAQ, comparison)",
       "Multiple AI presenters matched to your audience",
       "Complete ad copy packages for every concept",
-      "Competitor ad audit — what's running in your space",
+      "Competitor ad audit",
       "30-min strategy call on launch approach",
       "10 business day delivery + 1 round revisions",
     ],
@@ -80,7 +80,7 @@ const packages = [
 
 const retainerFeatures = [
   "20 video ads per month (weekly delivery)",
-  "4 concepts × 5 hook variations",
+  "4 concepts x 5 hook variations",
   "Scripting based on what's performing",
   "Complete ad copy for every concept",
   "Monthly creative strategy brief",
@@ -93,13 +93,13 @@ const retainerFeatures = [
 
 export function Pricing() {
   return (
-    <section id="packages" className="py-24 md:py-32">
+    <section id="packages" className="py-32 md:py-40">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-cal text-3xl md:text-4xl text-center mb-3 text-navy"
+          className="text-3xl md:text-5xl font-light tracking-tight text-center mb-5 text-gray-800"
         >
           Pick a package. Get your ads.
         </motion.h2>
@@ -107,7 +107,7 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-muted text-center text-[14px] mb-4 max-w-md mx-auto"
+          className="text-gray-400 text-center text-base mb-4 max-w-md mx-auto"
         >
           One-time purchase. No contracts. No commitments.
           Come back when you need more.
@@ -116,14 +116,14 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-[12px] text-muted-foreground mb-14"
+          className="text-center text-xs text-gray-400 mb-16"
         >
           For reference: a single UGC creator video costs $250-500.
           A video production shoot costs $3,000-5,000.
         </motion.p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 glass-strong rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
@@ -131,21 +131,21 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className={`relative flex flex-col p-8 md:p-9 ${
+              className={`relative flex flex-col rounded-2xl p-8 ${
                 pkg.popular
-                  ? "bg-navy text-white"
-                  : "border-b md:border-b-0 md:border-r border-black/[0.04] last:border-0"
+                  ? "bg-navy text-white card-elevated shadow-[0_4px_16px_rgba(26,26,46,0.2),0_12px_40px_rgba(26,26,46,0.15)]"
+                  : "card"
               }`}
             >
               {pkg.popular && (
-                <span className="absolute top-4 right-4 text-[9px] font-medium bg-white/10 text-white/60 px-2 py-0.5 rounded">
+                <span className="absolute top-4 right-4 text-[9px] font-medium bg-white/10 text-white/60 px-2.5 py-1 rounded-md">
                   MOST POPULAR
                 </span>
               )}
 
               <p
-                className={`text-[10px] uppercase tracking-[0.15em] mb-0.5 ${
-                  pkg.popular ? "text-white/30" : "text-muted-foreground"
+                className={`text-xs uppercase tracking-wider mb-1 ${
+                  pkg.popular ? "text-white/30" : "text-gray-400"
                 }`}
               >
                 {pkg.videos}
@@ -153,23 +153,23 @@ export function Pricing() {
 
               <h3
                 className={`font-cal text-xl mb-4 ${
-                  pkg.popular ? "text-white" : "text-navy"
+                  pkg.popular ? "text-white" : "text-gray-800"
                 }`}
               >
                 {pkg.name}
               </h3>
 
-              <div className="mb-1">
+              <div className="mb-2">
                 <span
-                  className={`font-cal text-4xl ${
-                    pkg.popular ? "text-white" : "text-navy"
+                  className={`text-4xl font-light tracking-tight ${
+                    pkg.popular ? "text-white" : "text-gray-800"
                   }`}
                 >
                   {pkg.price}
                 </span>
                 <span
-                  className={`text-[11px] ml-2 ${
-                    pkg.popular ? "text-white/30" : "text-muted-foreground"
+                  className={`text-xs ml-2 ${
+                    pkg.popular ? "text-white/30" : "text-gray-400"
                   }`}
                 >
                   {pkg.perVideo}
@@ -177,26 +177,26 @@ export function Pricing() {
               </div>
 
               <p
-                className={`text-[12px] mb-6 leading-relaxed ${
-                  pkg.popular ? "text-white/40" : "text-muted"
+                className={`text-sm mb-6 leading-relaxed ${
+                  pkg.popular ? "text-white/40" : "text-gray-500"
                 }`}
               >
                 {pkg.desc}
               </p>
 
               {/* What's included */}
-              <ul className="space-y-1.5 mb-6 flex-1">
+              <ul className="space-y-2 mb-6 flex-1">
                 {pkg.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-[11px]">
+                  <li key={f} className="flex items-start gap-2.5 text-xs">
                     <Check
-                      size={11}
+                      size={12}
                       className={`shrink-0 mt-0.5 ${
-                        pkg.popular ? "text-white/25" : "text-muted-foreground/50"
+                        pkg.popular ? "text-white/25" : "text-gray-300"
                       }`}
                     />
                     <span
                       className={
-                        pkg.popular ? "text-white/55" : "text-muted"
+                        pkg.popular ? "text-white/55" : "text-gray-500"
                       }
                     >
                       {f}
@@ -208,16 +208,16 @@ export function Pricing() {
               {/* Bonus */}
               {pkg.bonus && (
                 <div
-                  className={`rounded-lg p-3 mb-4 text-[11px] border border-dashed ${
+                  className={`rounded-xl p-3.5 mb-4 text-xs border border-dashed ${
                     pkg.popular
                       ? "border-white/15 bg-white/5"
-                      : "border-navy/10 bg-navy/[0.02]"
+                      : "border-gray-200 bg-gray-50"
                   }`}
                 >
-                  <span className={`font-medium ${pkg.popular ? "text-white/60" : "text-navy"}`}>
+                  <span className={`font-medium ${pkg.popular ? "text-white/60" : "text-gray-700"}`}>
                     BONUS:
                   </span>{" "}
-                  <span className={pkg.popular ? "text-white/40" : "text-muted"}>
+                  <span className={pkg.popular ? "text-white/40" : "text-gray-500"}>
                     {pkg.bonus}
                   </span>
                 </div>
@@ -225,13 +225,13 @@ export function Pricing() {
 
               {/* Value anchor */}
               <div
-                className={`rounded-lg p-3 mb-5 text-[10px] ${
-                  pkg.popular ? "bg-white/5" : "bg-surface"
+                className={`rounded-xl p-3.5 mb-5 text-xs ${
+                  pkg.popular ? "bg-white/5" : "bg-gray-50"
                 }`}
               >
                 <p
-                  className={`font-medium mb-1.5 ${
-                    pkg.popular ? "text-white/40" : "text-muted"
+                  className={`font-medium mb-2 ${
+                    pkg.popular ? "text-white/40" : "text-gray-500"
                   }`}
                 >
                   What this would cost elsewhere:
@@ -240,7 +240,7 @@ export function Pricing() {
                   <div
                     key={a.item}
                     className={`flex justify-between py-0.5 ${
-                      pkg.popular ? "text-white/30" : "text-muted-foreground"
+                      pkg.popular ? "text-white/30" : "text-gray-400"
                     }`}
                   >
                     <span>{a.item}</span>
@@ -251,14 +251,14 @@ export function Pricing() {
 
               <a
                 href="#contact"
-                className={`flex items-center justify-center gap-2 rounded-lg py-2.5 text-[13px] font-medium transition-all ${
+                className={`flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-medium transition-all ${
                   pkg.popular
                     ? "bg-white text-navy hover:bg-white/90"
                     : "bg-navy text-white hover:bg-navy-light"
                 }`}
               >
                 Get Started
-                <ArrowRight size={13} />
+                <ArrowRight size={14} />
               </a>
             </motion.div>
           ))}
@@ -269,9 +269,9 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-6 py-5 rounded-xl glass"
+          className="text-center mt-8 py-5 rounded-xl card"
         >
-          <p className="text-[13px] text-navy font-medium">
+          <p className="text-sm text-gray-600">
             Not happy? We revise until you are — or redo it from scratch. No questions asked.
           </p>
         </motion.div>
@@ -281,40 +281,39 @@ export function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-8 rounded-2xl glass-strong p-8 md:p-10"
+          className="mt-8 rounded-2xl card p-8 md:p-10"
         >
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground mb-1">
+              <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
                 For businesses spending $5k+/mo on ads
               </p>
-              <h3 className="font-cal text-2xl text-navy">
+              <h3 className="font-cal text-2xl text-gray-800">
                 Monthly Retainer
               </h3>
             </div>
             <div className="md:text-right">
-              <span className="font-cal text-3xl text-navy">$2,500</span>
-              <span className="text-muted text-[12px]">/month</span>
-              <p className="text-[10px] text-muted-foreground mt-0.5">
+              <span className="text-3xl font-light tracking-tight text-gray-800">$2,500</span>
+              <span className="text-gray-500 text-sm">/month</span>
+              <p className="text-xs text-gray-400 mt-0.5">
                 Cancel anytime. No lock-in.
               </p>
             </div>
           </div>
 
-          <p className="text-muted text-[13px] leading-relaxed mb-6 max-w-xl">
+          <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xl">
             Your agency charges this much and gives you 6 static images.
             We deliver 20 video ads per month with strategy, copy, and weekly fresh creative.
-            Your ads never go stale. Your testing never stops.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 mb-6">
             {retainerFeatures.map((f) => (
-              <div key={f} className="flex items-start gap-2 text-[11px]">
+              <div key={f} className="flex items-start gap-2.5 text-xs">
                 <Check
-                  size={11}
-                  className="text-muted-foreground/50 shrink-0 mt-0.5"
+                  size={12}
+                  className="text-gray-300 shrink-0 mt-0.5"
                 />
-                <span className="text-muted">{f}</span>
+                <span className="text-gray-500">{f}</span>
               </div>
             ))}
           </div>
@@ -322,12 +321,12 @@ export function Pricing() {
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 py-2.5 rounded-lg text-[13px] font-medium hover:bg-navy-light transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 py-3 rounded-xl text-sm font-medium hover:bg-navy-light transition-colors"
             >
-              <Phone size={13} />
+              <Phone size={14} />
               Book a Strategy Call
             </a>
-            <p className="text-[11px] text-muted-foreground self-center">
+            <p className="text-xs text-gray-400 self-center">
               First batch delivered within 48 hours of onboarding — or your first month is free.
             </p>
           </div>

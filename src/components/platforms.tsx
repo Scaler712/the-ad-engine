@@ -30,7 +30,7 @@ export function Platforms() {
   return (
     <section className="pb-10 pt-4">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-center text-[10px] text-muted-foreground/50 uppercase tracking-[0.2em] mb-5">
+        <p className="text-center text-[10px] text-gray-300 uppercase tracking-[0.2em] mb-5">
           Ads built for these platforms
         </p>
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
@@ -41,7 +41,7 @@ export function Platforms() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
-              className="text-navy/20 hover:text-navy/60 transition-colors duration-300"
+              className="text-gray-300 hover:text-gray-500 transition-colors duration-300"
               title={p.name}
             >
               <p.logo className="h-5 md:h-5 w-auto" />
