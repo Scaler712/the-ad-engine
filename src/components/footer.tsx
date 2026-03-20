@@ -4,7 +4,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <img src="/logo.png" alt="Angle Ads" className="h-7" />
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap items-center justify-center gap-5 md:gap-8">
             {["Process", "Packages", "Results", "FAQ"].map((label) => (
               <a
                 key={label}

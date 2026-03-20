@@ -27,7 +27,7 @@ export function Fit() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-12 text-[#1a1a1a]"
+          className="font-heading text-3xl md:text-5xl tracking-tight text-center mb-8 md:mb-12 text-[#1a1a1a]"
         >
           Built for businesses that run paid ads
         </motion.h2>
@@ -37,7 +37,7 @@ export function Fit() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card p-8 md:p-10"
+            className="card p-5 md:p-10"
           >
             <p className="font-cal text-lg text-[#1a1a1a] mb-6">
               Perfect fit
@@ -59,7 +59,7 @@ export function Fit() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="card p-8 md:p-10"
+            className="card p-5 md:p-10"
           >
             <p className="font-cal text-lg text-[#1a1a1a] mb-6">
               Not the right fit

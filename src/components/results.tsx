@@ -21,13 +21,13 @@ export function Results() {
   return (
     <section id="results" className="py-16 md:py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left: Card mock showing client values */}
           <motion.div
             initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="card p-7 md:p-9"
+            className="card p-5 md:p-9"
           >
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-4">
               Client value per industry
@@ -57,7 +57,7 @@ export function Results() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-4xl md:text-5xl tracking-tight text-[#1a1a1a] leading-[1.1] mb-6">
+            <h2 className="font-heading text-3xl md:text-5xl tracking-tight text-[#1a1a1a] leading-[1.1] mb-4 md:mb-6">
               Do the math. One client pays for everything.
             </h2>
             <p className="text-gray-500 text-base mb-10 leading-relaxed">

@@ -54,8 +54,8 @@ const stats = [
 export function StatsBar() {
   return (
     <section className="py-6 md:py-8 -mt-16 relative z-10">
-      <div className="mx-auto max-w-3xl px-6">
-        <div className="grid grid-cols-3 gap-8">
+      <div className="mx-auto max-w-3xl px-4 md:px-6">
+        <div className="grid grid-cols-3 gap-4 md:gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -65,10 +65,10 @@ export function StatsBar() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <p className="font-heading text-3xl md:text-4xl tracking-tight text-[#1a1a1a]">
+              <p className="font-heading text-2xl md:text-4xl tracking-tight text-[#1a1a1a]">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="text-xs text-gray-400 mt-1.5 tracking-wide">
+              <p className="text-[10px] md:text-xs text-gray-400 mt-1 md:mt-1.5 tracking-wide">
                 {stat.label}
               </p>
             </motion.div>

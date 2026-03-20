@@ -13,7 +13,7 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl tracking-tight leading-[1.1] mb-6">
+          <h2 className="text-3xl md:text-5xl tracking-tight leading-[1.1] mb-5 md:mb-6">
             <span className="font-semibold text-[#1a1a1a]">
               Your competitors are running video ads right now.
             </span>

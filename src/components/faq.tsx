@@ -49,7 +49,7 @@ export function FAQ() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-3xl md:text-4xl tracking-tight text-left mb-12 text-[#1a1a1a]"
+          className="font-heading text-2xl md:text-4xl tracking-tight text-left mb-8 md:mb-12 text-[#1a1a1a]"
         >
           Before you decide
         </motion.h2>

@@ -37,12 +37,12 @@ export function Hero() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-tight text-[#1a1a1a] leading-[1.05] mb-6">
+            <h1 className="font-heading text-[2.5rem] md:text-7xl lg:text-8xl tracking-tight text-[#1a1a1a] leading-[1.05] mb-4 md:mb-6">
               Video ads that get
               <br />
               you clients.
             </h1>
-            <p className="text-base md:text-lg text-gray-500 max-w-md mx-auto mb-6 leading-relaxed">
+            <p className="text-sm md:text-lg text-gray-500 max-w-md mx-auto mb-4 md:mb-6 leading-relaxed px-4 md:px-0">
               We produce AI video ads for businesses that run paid advertising.
               15 ads, written copy, and a launch guide — delivered in 7 days.
               You never touch a camera.

@@ -207,7 +207,7 @@ export function Process() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
+          className="font-heading text-3xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
 
           From brief to live ads in 7 days
@@ -221,7 +221,7 @@ export function Process() {
           From zero content to ads live in under a week
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-y-8 items-start">
+        <div className="grid grid-cols-2 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-4 md:gap-y-8 items-start">
           {steps.map((step, i) => (
             <React.Fragment key={step.num}>
               <motion.div
@@ -232,23 +232,23 @@ export function Process() {
                 className="flex flex-col items-center text-center"
               >
                 {/* Card with visual */}
-                <div className="card w-full aspect-[4/5] flex items-center justify-center p-4 mb-6 overflow-hidden">
+                <div className="card w-full aspect-[4/5] flex items-center justify-center p-3 md:p-4 mb-4 md:mb-6 overflow-hidden">
                   {step.visual}
                 </div>
 
                 {/* Step info */}
-                <div className="flex items-center gap-2.5 mb-2">
-                  <span className="text-sm font-semibold text-[#1a1a1a]">
+                <div className="flex items-center gap-1.5 md:gap-2.5 mb-1.5 md:mb-2">
+                  <span className="text-xs md:text-sm font-semibold text-[#1a1a1a]">
                     {step.num}
                   </span>
-                  <h3 className="font-semibold text-base text-[#1a1a1a]">
+                  <h3 className="font-semibold text-sm md:text-base text-[#1a1a1a]">
                     {step.title}
                   </h3>
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-[240px]">
+                <p className="text-xs md:text-sm text-gray-500 leading-relaxed max-w-[240px]">
                   {step.desc}
                 </p>
-                <span className="inline-block mt-4 text-xs text-gray-400 bg-[#eef0f5] px-3 py-1 rounded-full">
+                <span className="inline-block mt-3 md:mt-4 text-[10px] md:text-xs text-gray-400 bg-[#eef0f5] px-2.5 md:px-3 py-1 rounded-full">
                   {step.time}
                 </span>
               </motion.div>

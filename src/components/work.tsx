@@ -64,7 +64,7 @@ export function Work() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
+          className="font-heading text-3xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
 
           This is what $100 per video looks like.
@@ -73,13 +73,13 @@ export function Work() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-center text-lg mb-12 max-w-md mx-auto"
+          className="text-gray-500 text-center text-base md:text-lg mb-8 md:mb-12 max-w-md mx-auto"
         >
           Every video below was scripted, produced, and edited by our team. Judge the quality yourself.
           ad-ready.
         </motion.p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-5">
           {visible.map((video, i) => (
             <VideoCard key={video.id} src={video.src} index={i} />
           ))}

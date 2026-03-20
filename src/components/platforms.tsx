@@ -53,7 +53,7 @@ export function Platforms() {
         <p className="text-center text-[10px] text-gray-400 uppercase tracking-[0.2em] mb-5">
           Ads built for these platforms
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12">
           {platforms.map((p, i) => (
             <motion.div
               key={p.name}

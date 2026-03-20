@@ -85,7 +85,7 @@ export function Pricing() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
+          className="font-heading text-3xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
 
           One payment. No contracts. Ads that work.
@@ -187,7 +187,7 @@ export function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-8 bg-white rounded-2xl p-8 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_2px_8px_rgba(0,0,0,0.04)]"
+          className="mt-8 bg-white rounded-2xl p-5 md:p-8 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_2px_8px_rgba(0,0,0,0.04)]"
         >
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
             <div>
@@ -204,7 +204,7 @@ export function Pricing() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 mb-6">
             {retainerFeatures.map((f) => (
               <div key={f} className="flex items-start gap-2 text-[13px]">
                 <Check size={14} className="text-gray-300 shrink-0 mt-0.5" />

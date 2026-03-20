@@ -181,7 +181,7 @@ export function Problem() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-4xl md:text-5xl tracking-tight text-left leading-[1.1] text-[#1a1a1a] mb-4"
+          className="font-heading text-3xl md:text-5xl tracking-tight text-left leading-[1.1] text-[#1a1a1a] mb-4"
         >
           You&apos;re not running video ads.
           <br />
@@ -191,7 +191,7 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-left text-lg mb-12 max-w-lg"
+          className="text-gray-500 text-left text-base md:text-lg mb-8 md:mb-12 max-w-lg"
         >
           Every business owner knows video outperforms static. Here&apos;s why most still aren&apos;t doing it.
         </motion.p>
@@ -203,7 +203,7 @@ export function Problem() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card p-8 md:p-10 md:col-span-7"
+            className="card p-5 md:p-10 md:col-span-7"
           >
             <div className="mb-6 overflow-hidden max-h-[280px]">
               <InvoiceArtifact />
@@ -222,7 +222,7 @@ export function Problem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.06 }}
-            className="card p-8 md:p-10 md:col-span-5"
+            className="card p-5 md:p-10 md:col-span-5"
           >
             <div className="mb-6 overflow-hidden max-h-[280px]">
               <TimelineArtifact />
@@ -242,7 +242,7 @@ export function Problem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.12 }}
-            className="card p-8 md:p-10 md:col-span-5"
+            className="card p-5 md:p-10 md:col-span-5"
           >
             <div className="mb-6 overflow-hidden max-h-[280px]">
               <NoCameraArtifact />
@@ -261,7 +261,7 @@ export function Problem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.18 }}
-            className="card p-8 md:p-10 md:col-span-7"
+            className="card p-5 md:p-10 md:col-span-7"
           >
             <div className="mb-6 overflow-hidden max-h-[280px]">
               <RecycledArtifact />

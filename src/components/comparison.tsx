@@ -30,7 +30,7 @@ export function Comparison() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-heading text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
+          className="font-heading text-3xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
 
           Why pay agency prices for $100 videos?
@@ -52,12 +52,12 @@ export function Comparison() {
           className="bg-white rounded-2xl overflow-hidden shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_2px_8px_rgba(0,0,0,0.04)]"
         >
           {/* Header */}
-          <div className="grid grid-cols-[1fr_100px_100px] px-5 py-3 border-b border-gray-100">
+          <div className="grid grid-cols-[1fr_72px_72px] md:grid-cols-[1fr_100px_100px] px-3 md:px-5 py-3 border-b border-gray-100">
             <span />
-            <span className="text-[11px] font-cal text-center text-[#4a7dff]">
+            <span className="text-[10px] md:text-[11px] font-cal text-center text-[#4a7dff]">
               Angle Ads
             </span>
-            <span className="text-[11px] font-medium text-center text-gray-400">
+            <span className="text-[10px] md:text-[11px] font-medium text-center text-gray-400">
               Others
             </span>
           </div>
@@ -66,15 +66,15 @@ export function Comparison() {
           {rows.map((row, i) => (
             <div
               key={row.feature}
-              className={`grid grid-cols-[1fr_100px_100px] px-5 py-3.5 items-center ${
+              className={`grid grid-cols-[1fr_72px_72px] md:grid-cols-[1fr_100px_100px] px-3 md:px-5 py-3 md:py-3.5 items-center ${
                 i < rows.length - 1 ? "border-b border-gray-50" : ""
               }`}
             >
-              <span className="text-sm text-[#1a1a1a]">{row.feature}</span>
-              <span className="text-sm font-medium text-[#1a1a1a] text-center">
+              <span className="text-xs md:text-sm text-[#1a1a1a]">{row.feature}</span>
+              <span className="text-xs md:text-sm font-medium text-[#1a1a1a] text-center">
                 <Val v={row.engine} />
               </span>
-              <span className="text-sm text-gray-400 text-center">
+              <span className="text-xs md:text-sm text-gray-400 text-center">
                 <Val v={row.others} />
               </span>
             </div>
