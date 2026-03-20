@@ -15,20 +15,20 @@ const rows = [
 ];
 
 function CellValue({ val }: { val: string | boolean }) {
-  if (val === true) return <Check size={14} className="text-gray-800 mx-auto" />;
+  if (val === true) return <Check size={14} className="text-[#1a1a1a] mx-auto" />;
   if (val === false) return <X size={14} className="text-gray-300 mx-auto" />;
   return <span>{val}</span>;
 }
 
 export function Comparison() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-24 md:py-32 bg-white">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-6xl tracking-tight text-center mb-5 text-gray-800"
+          className="font-display text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
           How it compares
         </motion.h2>
@@ -36,7 +36,7 @@ export function Comparison() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-center text-lg mb-10 max-w-md mx-auto"
+          className="text-gray-500 text-center text-lg mb-10 max-w-md mx-auto"
         >
           The Ad Engine vs. every other way to get video ads.
         </motion.p>
@@ -45,15 +45,15 @@ export function Comparison() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="card rounded-2xl overflow-hidden"
+          className="bg-[#f5f5f7] rounded-2xl overflow-hidden"
         >
           <div className="overflow-x-auto">
             <table className="w-full text-sm min-w-[700px]">
               <thead>
-                <tr className="border-b border-gray-100">
+                <tr className="border-b border-gray-200/60">
                   <th className="text-left py-4 px-6 text-gray-400 font-normal text-xs w-[140px]" />
                   <th className="py-4 px-4 text-center">
-                    <span className="text-sm font-medium text-gray-800 bg-gray-50 px-3 py-1 rounded-lg">The Ad Engine</span>
+                    <span className="text-sm font-medium text-[#1a1a1a] bg-white px-3 py-1 rounded-lg">The Ad Engine</span>
                   </th>
                   <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">UGC Creators</th>
                   <th className="py-4 px-4 text-center text-gray-400 font-normal text-xs">Agency</th>
@@ -63,9 +63,9 @@ export function Comparison() {
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr key={i} className="border-b border-gray-50 last:border-0">
+                  <tr key={i} className="border-b border-gray-200/40 last:border-0">
                     <td className="py-3.5 px-6 text-gray-500 text-xs font-medium">{row.feature}</td>
-                    <td className="py-3.5 px-4 text-center font-medium text-gray-800 text-xs"><CellValue val={row.engine} /></td>
+                    <td className="py-3.5 px-4 text-center font-medium text-[#1a1a1a] text-xs"><CellValue val={row.engine} /></td>
                     <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.ugc} /></td>
                     <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.agency} /></td>
                     <td className="py-3.5 px-4 text-center text-gray-400 text-xs"><CellValue val={row.diy} /></td>

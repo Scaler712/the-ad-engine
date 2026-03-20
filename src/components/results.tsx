@@ -19,7 +19,7 @@ const stats = [
 
 export function Results() {
   return (
-    <section id="results" className="py-16 md:py-24">
+    <section id="results" className="py-24 md:py-32 bg-white">
       <div className="mx-auto max-w-5xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Left: Card mock showing client values */}
@@ -27,7 +27,7 @@ export function Results() {
             initial={{ opacity: 0, x: -16 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="card p-8"
+            className="bg-[#f5f5f7] rounded-2xl p-7 md:p-9"
           >
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-4">Client value per industry</p>
             <div className="space-y-3">
@@ -38,10 +38,10 @@ export function Results() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.05 }}
-                  className="flex items-center justify-between py-3 border-b border-gray-100 last:border-0"
+                  className="flex items-center justify-between py-3 border-b border-gray-200/60 last:border-0"
                 >
                   <span className="text-sm text-gray-500">{v.industry}</span>
-                  <span className="text-sm font-medium text-gray-800">{v.range}</span>
+                  <span className="text-sm font-medium text-[#1a1a1a]">{v.range}</span>
                 </motion.div>
               ))}
             </div>
@@ -53,7 +53,7 @@ export function Results() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-4xl md:text-6xl tracking-tight text-gray-800 leading-[1.1] mb-6">
+            <h2 className="font-display text-4xl md:text-5xl tracking-tight text-[#1a1a1a] leading-[1.1] mb-6">
               One winning ad pays for
               <br />
               the entire package.
@@ -65,9 +65,9 @@ export function Results() {
 
             <div className="space-y-6">
               {stats.map((stat, i) => (
-                <div key={i} className="border-l-2 border-gray-200 pl-5">
-                  <p className="text-3xl font-light tracking-tight text-gray-800">{stat.number}</p>
-                  <p className="text-sm text-gray-400 mt-0.5">{stat.label}</p>
+                <div key={i} className="border-t border-gray-200 pt-4">
+                  <p className="font-display text-3xl tracking-tight text-[#1a1a1a]">{stat.number}</p>
+                  <p className="text-sm text-gray-500 mt-0.5">{stat.label}</p>
                 </div>
               ))}
             </div>

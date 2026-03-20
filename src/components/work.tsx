@@ -32,8 +32,8 @@ function VideoCard({ src, index }: { src: string; index: number }) {
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: (index % 4) * 0.06 }}
-      className="video-card card rounded-2xl overflow-hidden group cursor-pointer"
+      transition={{ delay: (index % 3) * 0.06 }}
+      className="video-card bg-[#f5f5f7] rounded-2xl overflow-hidden group cursor-pointer"
     >
       <div className="aspect-[9/16] relative">
         <video
@@ -52,16 +52,16 @@ function VideoCard({ src, index }: { src: string; index: number }) {
 
 export function Work() {
   const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? allVideos : allVideos.slice(0, 8);
+  const visible = showAll ? allVideos : allVideos.slice(0, 6);
 
   return (
-    <section id="work" className="py-16 md:py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="work" className="py-24 md:py-32 bg-white">
+      <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-6xl tracking-tight text-center mb-5 text-gray-800"
+          className="font-display text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
           Real ads. Real results.
         </motion.h2>
@@ -69,12 +69,12 @@ export function Work() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-center text-lg mb-12 max-w-sm mx-auto"
+          className="text-gray-500 text-center text-lg mb-12 max-w-sm mx-auto"
         >
           Every video was produced by our team — scripted, edited, delivered ad-ready.
         </motion.p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {visible.map((video, i) => (
             <VideoCard key={video.id} src={video.src} index={i} />
           ))}
@@ -84,7 +84,7 @@ export function Work() {
           <div className="text-center mt-12">
             <button
               onClick={() => setShowAll(true)}
-              className="card text-sm font-medium text-gray-600 px-6 py-2.5 rounded-xl hover:shadow-md transition-all"
+              className="bg-[#f5f5f7] text-sm font-medium text-[#1a1a1a] px-6 py-2.5 rounded-xl hover:bg-gray-200 transition-all"
             >
               View All 20 Videos
             </button>

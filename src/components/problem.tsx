@@ -11,13 +11,13 @@ const pains = [
 
 export function Problem() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-24 md:py-32 bg-white">
       <div className="mx-auto max-w-4xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-6xl tracking-tight text-center leading-[1.1] text-gray-800 mb-5"
+          className="font-display text-4xl md:text-5xl tracking-tight text-center leading-[1.1] text-[#1a1a1a] mb-5"
         >
           You already know video ads
           <br />
@@ -27,12 +27,12 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-center text-lg mb-12 max-w-md mx-auto"
+          className="text-gray-500 text-center text-lg mb-12 max-w-md mx-auto"
         >
           So why aren&apos;t you running them?
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {pains.map((item, i) => (
             <motion.div
               key={i}
@@ -40,9 +40,9 @@ export function Problem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
-              className="card p-8"
+              className="bg-[#f5f5f7] rounded-2xl p-7 md:p-9"
             >
-              <p className="font-cal text-xl text-gray-800 mb-3">{item.pain}</p>
+              <p className="font-semibold text-xl text-[#1a1a1a] mb-3">{item.pain}</p>
               <p className="text-sm text-gray-500 leading-relaxed">{item.detail}</p>
             </motion.div>
           ))}
@@ -52,7 +52,7 @@ export function Problem() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-2xl font-light tracking-tight text-gray-700 text-center mt-12"
+          className="text-2xl font-light tracking-tight text-[#1a1a1a] text-center mt-12"
         >
           We built The Ad Engine to fix this.
         </motion.p>

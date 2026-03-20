@@ -9,15 +9,15 @@
 }
 
 @theme inline {
-  --color-background: #dde2ee;
-  --color-foreground: #1a1a2e;
-  --color-muted: #6b7280;
-  --color-muted-foreground: #9ca3af;
-  --color-border: rgba(0,0,0,0.06);
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+  --color-muted: #666666;
+  --color-muted-foreground: #999999;
+  --color-border: #e5e5e5;
   --color-navy: #1a1a2e;
   --color-navy-light: #2d2d44;
-  --color-surface: #f8f9fc;
-  --color-card: #ffffff;
+  --color-surface: #f5f5f7;
+  --color-accent: #4a7dff;
   --font-sans: var(--font-inter);
   --font-cal: "Cal Sans", sans-serif;
   --font-display: var(--font-serif);
@@ -28,16 +28,17 @@
 }
 
 body {
-  background: linear-gradient(180deg, #b8c6e0 0%, #c8d4ea 15%, #dde2ee 35%, #e8ddd4 55%, #ebd5c8 70%, #ddd8d4 85%, #d5daea 100%);
-  background-attachment: fixed;
-  color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Serif display headings — like cluely */
 .font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-display-italic {
   font-family: var(--font-display), Georgia, serif;
   font-style: italic;
 }
@@ -48,27 +49,13 @@ body {
 }
 
 p, li, span, a, button, input, textarea, label {
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
 }
 
-/* White card with subtle shadow */
-.card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
-}
-
-.card-elevated {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
-}
-
-/* Video card */
 .video-card {
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
 }
 .video-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }

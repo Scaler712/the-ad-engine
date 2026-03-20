@@ -21,25 +21,25 @@ const notFit = [
 
 export function Fit() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-24 md:py-32 bg-white">
       <div className="mx-auto max-w-4xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-6xl tracking-tight text-center mb-10 text-gray-800"
+          className="font-display text-4xl md:text-5xl tracking-tight text-center mb-12 text-[#1a1a1a]"
         >
           Is this for you?
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="card p-8"
+            className="bg-[#f5f5f7] rounded-2xl p-7 md:p-9"
           >
-            <p className="font-cal text-lg text-gray-800 mb-6">Perfect fit</p>
+            <p className="font-semibold text-lg text-[#1a1a1a] mb-6">Perfect fit</p>
             <ul className="space-y-4">
               {goodFit.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm">
@@ -54,9 +54,9 @@ export function Fit() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="card p-8"
+            className="bg-[#f5f5f7] rounded-2xl p-7 md:p-9"
           >
-            <p className="font-cal text-lg text-gray-800 mb-6">Not the right fit</p>
+            <p className="font-semibold text-lg text-[#1a1a1a] mb-6">Not the right fit</p>
             <ul className="space-y-4">
               {notFit.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm">

@@ -19,25 +19,25 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-16 md:py-24">
-      <div className="mx-auto max-w-2xl px-6">
+    <section id="faq" className="py-24 md:py-32 bg-white">
+      <div className="mx-auto max-w-3xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-6xl tracking-tight text-center mb-10 text-gray-800"
+          className="font-display text-4xl md:text-5xl tracking-tight text-left mb-12 text-[#1a1a1a]"
         >
           Questions & answers
         </motion.h2>
 
-        <div className="divide-y divide-gray-200/60">
+        <div className="divide-y divide-gray-200">
           {faqs.map((faq, i) => (
             <div key={i}>
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                 className="w-full flex items-center justify-between py-5 text-left group"
               >
-                <span className="font-cal text-base text-gray-800 pr-4">
+                <span className="text-base font-medium text-[#1a1a1a] pr-4">
                   {faq.q}
                 </span>
                 <ChevronDown

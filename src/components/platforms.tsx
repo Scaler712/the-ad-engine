@@ -28,9 +28,9 @@ const platforms = [
 
 export function Platforms() {
   return (
-    <section className="pb-10 pt-4">
+    <section className="py-12 bg-white">
       <div className="mx-auto max-w-3xl px-6">
-        <p className="text-center text-[10px] text-gray-300 uppercase tracking-[0.2em] mb-5">
+        <p className="text-center text-[10px] text-gray-400 uppercase tracking-[0.2em] mb-5">
           Ads built for these platforms
         </p>
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">

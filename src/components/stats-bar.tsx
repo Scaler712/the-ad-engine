@@ -29,7 +29,7 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="py-12 md:py-16 -mt-16 relative z-10">
+    <section className="py-24 md:py-32 -mt-16 relative z-10 bg-white border-t border-gray-100">
       <div className="mx-auto max-w-3xl px-6">
         <div className="grid grid-cols-3 gap-8">
           {stats.map((stat, i) => (
@@ -41,7 +41,7 @@ export function StatsBar() {
               transition={{ delay: i * 0.1 }}
               className="text-center"
             >
-              <p className="text-3xl md:text-4xl font-light tracking-tight text-gray-800">
+              <p className="font-display text-3xl md:text-4xl tracking-tight text-[#1a1a1a]">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </p>
               <p className="text-xs text-gray-400 mt-1.5 tracking-wide">

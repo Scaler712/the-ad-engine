@@ -5,24 +5,21 @@ import { ArrowRight, Phone } from "lucide-react";
 
 export function CTA() {
   return (
-    <section id="contact" className="py-16 md:py-24 relative">
-      {/* Slightly warmer gradient overlay for the CTA section */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#e5ddd6]/30 to-[#ddd5ce]/40 pointer-events-none" />
-
-      <div className="mx-auto max-w-3xl px-6 relative">
+    <section id="contact" className="py-24 md:py-32 bg-[#f5f5f7]">
+      <div className="mx-auto max-w-3xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-6">
-            Limited to 10 new clients per month
-          </p>
-
-          <h2 className="font-display text-4xl md:text-6xl tracking-tight text-gray-800 leading-[1.1] mb-6">
-            Your competitors aren&apos;t waiting.
+          <h2 className="text-4xl md:text-5xl tracking-tight leading-[1.1] mb-6">
+            <span className="font-semibold text-[#1a1a1a]">
+              Your competitors aren&apos;t waiting.
+            </span>
             <br />
-            Neither should you.
+            <span className="font-display-italic text-[#4a7dff]">
+              Neither should you.
+            </span>
           </h2>
 
           <p className="text-gray-500 text-base mb-10 max-w-md leading-relaxed">
@@ -33,14 +30,14 @@ export function CTA() {
           <div className="flex flex-col sm:flex-row items-start gap-3 mb-8">
             <a
               href="#packages"
-              className="bg-navy text-white px-8 py-3 rounded-xl text-sm font-medium hover:bg-navy-light transition-all flex items-center gap-2"
+              className="bg-[#4a7dff] text-white px-8 py-3 rounded-xl text-sm font-medium hover:brightness-110 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(74,125,255,0.3)]"
             >
               Choose Your Package
               <ArrowRight size={14} />
             </a>
             <a
               href="#contact"
-              className="card text-gray-600 px-8 py-3 rounded-xl text-sm font-medium hover:shadow-md transition-all flex items-center gap-2"
+              className="bg-white text-[#1a1a1a] px-8 py-3 rounded-xl text-sm font-medium hover:bg-gray-50 transition-all flex items-center gap-2"
             >
               <Phone size={14} />
               Book a Strategy Call

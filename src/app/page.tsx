@@ -2,7 +2,6 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { StatsBar } from "@/components/stats-bar";
 import { Platforms } from "@/components/platforms";
-import { Marquee } from "@/components/marquee";
 import { Problem } from "@/components/problem";
 import { Process } from "@/components/process";
 import { Work } from "@/components/work";
@@ -22,7 +21,6 @@ export default function Home() {
         <Hero />
         <StatsBar />
         <Platforms />
-        <Marquee />
         <Problem />
         <Process />
         <Work />

@@ -24,12 +24,12 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/70 backdrop-blur-sm shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+          ? "bg-white/90 backdrop-blur-sm shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
-        <a href="#" className="font-cal text-base text-navy">
+        <a href="#" className="font-cal text-base text-[#1a1a1a]">
           The Ad Engine
         </a>
 
@@ -38,21 +38,21 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-gray-500 hover:text-gray-800 transition-colors"
+              className="text-sm text-gray-500 hover:text-[#1a1a1a] transition-colors"
             >
               {l.label}
             </a>
           ))}
           <a
             href="#packages"
-            className="bg-navy text-white text-sm font-medium px-5 py-2 rounded-lg hover:bg-navy-light transition-all"
+            className="bg-[#1a1a1a] text-white text-sm font-medium px-5 py-2 rounded-lg hover:bg-[#2d2d44] transition-all"
           >
             Get Started
           </a>
         </div>
 
         <button
-          className="md:hidden text-gray-800"
+          className="md:hidden text-[#1a1a1a]"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -82,7 +82,7 @@ export function Navbar() {
               <a
                 href="#packages"
                 onClick={() => setOpen(false)}
-                className="bg-navy text-white text-sm font-medium px-5 py-2.5 rounded-lg text-center"
+                className="bg-[#1a1a1a] text-white text-sm font-medium px-5 py-2.5 rounded-lg text-center"
               >
                 Get Started
               </a>

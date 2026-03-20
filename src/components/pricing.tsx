@@ -22,11 +22,6 @@ const packages = [
       "7 business day delivery",
     ],
     bonus: "30+ static ad creatives based on winning patterns",
-    valueAnchors: [
-      { item: "5 videos at UGC creator rates", value: "$1,250-2,500" },
-      { item: "Scripting + copywriting", value: "$500" },
-      { item: "30+ static ad creatives", value: "$600" },
-    ],
   },
   {
     name: "Growth",
@@ -46,11 +41,6 @@ const packages = [
       "7 business day delivery",
     ],
     bonus: "30+ static ad creatives based on winning patterns",
-    valueAnchors: [
-      { item: "15 videos at UGC creator rates", value: "$3,750-7,500" },
-      { item: "3 unique scripts + copywriting", value: "$1,500" },
-      { item: "30+ static ad creatives", value: "$600" },
-    ],
   },
   {
     name: "Scale",
@@ -70,11 +60,6 @@ const packages = [
       "10 business day delivery + 1 round revisions",
     ],
     bonus: "30+ static ad creatives based on winning patterns",
-    valueAnchors: [
-      { item: "30 videos at UGC creator rates", value: "$7,500-15,000" },
-      { item: "Competitor ad audit + strategy call", value: "$2,000" },
-      { item: "30+ static ad creatives", value: "$600" },
-    ],
   },
 ];
 
@@ -93,13 +78,13 @@ const retainerFeatures = [
 
 export function Pricing() {
   return (
-    <section id="packages" className="py-16 md:py-24">
+    <section id="packages" className="py-24 md:py-32 bg-white">
       <div className="mx-auto max-w-5xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-6xl tracking-tight text-center mb-5 text-gray-800"
+          className="font-display text-4xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
           Pick a package. Get your ads.
         </motion.h2>
@@ -107,23 +92,14 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-gray-400 text-center text-base mb-4 max-w-md mx-auto"
+          className="text-gray-500 text-center text-base mb-12 max-w-md mx-auto"
         >
           One-time purchase. No contracts. No commitments.
           Come back when you need more.
         </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center text-xs text-gray-400 mb-10"
-        >
-          For reference: a single UGC creator video costs $250-500.
-          A video production shoot costs $3,000-5,000.
-        </motion.p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
@@ -131,10 +107,10 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className={`relative flex flex-col rounded-2xl p-8 ${
+              className={`relative flex flex-col rounded-2xl p-7 md:p-9 ${
                 pkg.popular
-                  ? "bg-navy text-white shadow-[0_4px_16px_rgba(26,26,46,0.25),0_12px_40px_rgba(26,26,46,0.2)]"
-                  : "card"
+                  ? "bg-navy text-white"
+                  : "bg-[#f5f5f7]"
               }`}
             >
               {pkg.popular && (
@@ -152,8 +128,8 @@ export function Pricing() {
               </p>
 
               <h3
-                className={`font-cal text-xl mb-4 ${
-                  pkg.popular ? "text-white" : "text-gray-800"
+                className={`font-semibold text-xl mb-4 ${
+                  pkg.popular ? "text-white" : "text-[#1a1a1a]"
                 }`}
               >
                 {pkg.name}
@@ -162,7 +138,7 @@ export function Pricing() {
               <div className="mb-2">
                 <span
                   className={`text-4xl font-light tracking-tight ${
-                    pkg.popular ? "text-white" : "text-gray-800"
+                    pkg.popular ? "text-white" : "text-[#1a1a1a]"
                   }`}
                 >
                   {pkg.price}
@@ -208,13 +184,13 @@ export function Pricing() {
               {/* Bonus */}
               {pkg.bonus && (
                 <div
-                  className={`rounded-xl p-3.5 mb-4 text-xs border border-dashed ${
+                  className={`rounded-xl p-3.5 mb-5 text-xs border border-dashed ${
                     pkg.popular
                       ? "border-white/15 bg-white/5"
-                      : "border-gray-200 bg-gray-50"
+                      : "border-gray-300 bg-white/50"
                   }`}
                 >
-                  <span className={`font-medium ${pkg.popular ? "text-white/60" : "text-gray-700"}`}>
+                  <span className={`font-medium ${pkg.popular ? "text-white/60" : "text-[#1a1a1a]"}`}>
                     BONUS:
                   </span>{" "}
                   <span className={pkg.popular ? "text-white/40" : "text-gray-500"}>
@@ -223,38 +199,12 @@ export function Pricing() {
                 </div>
               )}
 
-              {/* Value anchor */}
-              <div
-                className={`rounded-xl p-3.5 mb-5 text-xs ${
-                  pkg.popular ? "bg-white/5" : "bg-gray-50"
-                }`}
-              >
-                <p
-                  className={`font-medium mb-2 ${
-                    pkg.popular ? "text-white/40" : "text-gray-500"
-                  }`}
-                >
-                  What this would cost elsewhere:
-                </p>
-                {pkg.valueAnchors.map((a) => (
-                  <div
-                    key={a.item}
-                    className={`flex justify-between py-0.5 ${
-                      pkg.popular ? "text-white/30" : "text-gray-400"
-                    }`}
-                  >
-                    <span>{a.item}</span>
-                    <span className="line-through">{a.value}</span>
-                  </div>
-                ))}
-              </div>
-
               <a
                 href="#contact"
                 className={`flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-medium transition-all ${
                   pkg.popular
                     ? "bg-white text-navy hover:bg-white/90"
-                    : "bg-navy text-white hover:bg-navy-light"
+                    : "bg-[#4a7dff] text-white hover:brightness-110"
                 }`}
               >
                 Get Started
@@ -269,9 +219,9 @@ export function Pricing() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mt-8 py-5 rounded-xl card"
+          className="text-center mt-8 py-5 rounded-xl bg-[#f5f5f7]"
         >
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-500">
             Not happy? We revise until you are — or redo it from scratch. No questions asked.
           </p>
         </motion.div>
@@ -281,19 +231,19 @@ export function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-8 rounded-2xl card p-8 md:p-10"
+          className="mt-8 rounded-2xl bg-[#f5f5f7] p-7 md:p-9"
         >
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
             <div>
               <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">
                 For businesses spending $5k+/mo on ads
               </p>
-              <h3 className="font-cal text-2xl text-gray-800">
+              <h3 className="font-semibold text-2xl text-[#1a1a1a]">
                 Monthly Retainer
               </h3>
             </div>
             <div className="md:text-right">
-              <span className="text-3xl font-light tracking-tight text-gray-800">$2,500</span>
+              <span className="text-3xl font-light tracking-tight text-[#1a1a1a]">$2,500</span>
               <span className="text-gray-500 text-sm">/month</span>
               <p className="text-xs text-gray-400 mt-0.5">
                 Cancel anytime. No lock-in.
@@ -321,7 +271,7 @@ export function Pricing() {
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 bg-navy text-white px-6 py-3 rounded-xl text-sm font-medium hover:bg-navy-light transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#4a7dff] text-white px-6 py-3 rounded-xl text-sm font-medium hover:brightness-110 transition-all"
             >
               <Phone size={14} />
               Book a Strategy Call

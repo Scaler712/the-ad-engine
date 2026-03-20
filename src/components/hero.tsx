@@ -37,10 +37,7 @@ export function Hero() {
       <ContainerScroll
         titleComponent={
           <>
-            <p className="text-xs uppercase tracking-[0.25em] text-gray-400 mb-6">
-              AI-Powered Ad Creative Studio
-            </p>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-tight text-gray-800 leading-[1.05] mb-6">
+            <h1 className="font-display-italic text-5xl md:text-7xl lg:text-8xl tracking-tight text-[#1a1a1a] leading-[1.05] mb-6">
               15 Video Ads. $1,500.
               <br />
               Done In 7 Days.
@@ -52,7 +49,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a
                 href="#packages"
-                className="bg-blue-500 text-white px-8 py-3 rounded-xl text-sm font-medium hover:bg-blue-600 transition-all shadow-sm"
+                className="bg-[#4a7dff] text-white px-8 py-3 rounded-xl text-sm font-medium hover:brightness-110 transition-all shadow-[0_0_20px_rgba(74,125,255,0.3)]"
               >
                 See Packages & Pricing
               </a>
@@ -66,7 +63,6 @@ export function Hero() {
           </>
         }
       >
-        {/* 3 videos side by side inside the tablet frame */}
         <div className="h-full w-full grid grid-cols-3 gap-1.5 p-1.5 md:gap-3 md:p-3 bg-gray-100 overflow-hidden">
           {heroVideos.map((id, i) => (
             <div
