@@ -1,38 +1,25 @@
 export function Footer() {
   return (
-    <footer className="border-t border-border py-12">
-      <div className="mx-auto max-w-7xl px-6">
+    <footer className="border-t border-border py-10">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-sm font-bold tracking-tight">THE AD ENGINE</p>
+          <p className="text-xs font-bold tracking-[0.15em] uppercase text-navy">
+            THE AD ENGINE
+          </p>
 
           <div className="flex items-center gap-8">
-            <a
-              href="#packages"
-              className="text-sm text-muted hover:text-foreground transition-colors"
-            >
-              Packages
-            </a>
-            <a
-              href="#results"
-              className="text-sm text-muted hover:text-foreground transition-colors"
-            >
-              Results
-            </a>
-            <a
-              href="#faq"
-              className="text-sm text-muted hover:text-foreground transition-colors"
-            >
-              FAQ
-            </a>
-            <a
-              href="#contact"
-              className="text-sm text-muted hover:text-foreground transition-colors"
-            >
-              Contact
-            </a>
+            {["Packages", "Results", "FAQ", "Contact"].map((label) => (
+              <a
+                key={label}
+                href={`#${label.toLowerCase()}`}
+                className="text-xs text-muted hover:text-navy transition-colors tracking-wide"
+              >
+                {label}
+              </a>
+            ))}
           </div>
 
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[11px] text-muted-foreground">
             © 2026 The Ad Engine. All rights reserved.
           </p>
         </div>

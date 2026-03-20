@@ -1,5 +1,7 @@
 "use client";
 
+import { InfiniteSlider } from "./infinite-slider";
+
 const industries = [
   "DENTAL PRACTICES",
   "SAAS COMPANIES",
@@ -14,20 +16,18 @@ const industries = [
 ];
 
 export function Marquee() {
-  const items = [...industries, ...industries];
-
   return (
-    <section className="py-8 border-y border-border overflow-hidden bg-card/30">
-      <div className="flex animate-marquee whitespace-nowrap">
-        {items.map((item, i) => (
-          <span key={i} className="flex items-center">
-            <span className="text-sm font-semibold tracking-wider text-muted-foreground px-6">
+    <section className="py-6 border-y border-border bg-surface">
+      <InfiniteSlider gap={0} duration={35} className="py-2">
+        {industries.map((item, i) => (
+          <span key={i} className="flex items-center shrink-0">
+            <span className="text-[11px] font-semibold tracking-[0.2em] text-navy/40 px-8 whitespace-nowrap">
               {item}
             </span>
-            <span className="text-accent text-xs">◆</span>
+            <span className="text-navy/20 text-[8px]">◆</span>
           </span>
         ))}
-      </div>
+      </InfiniteSlider>
     </section>
   );
 }

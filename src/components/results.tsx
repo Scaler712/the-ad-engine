@@ -22,20 +22,29 @@ const metrics = [
 
 export function Results() {
   return (
-    <section id="results" className="py-24 md:py-32 bg-card/30">
+    <section id="results" className="py-24 md:py-32 bg-navy text-white">
       <div className="mx-auto max-w-5xl px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-bold text-center mb-4"
+          className="text-xs uppercase tracking-[0.2em] text-white/40 font-semibold mb-4 text-center"
+        >
+          Results
+        </motion.p>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="font-display text-3xl md:text-[2.75rem] font-bold text-center mb-16 leading-tight"
         >
           The numbers speak louder
           <br />
-          <span className="text-muted-foreground">than we ever could.</span>
+          <span className="text-white/40">than we ever could.</span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {metrics.map((m, i) => (
             <motion.div
               key={m.label}
@@ -43,42 +52,38 @@ export function Results() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="text-center p-8 rounded-2xl border border-border bg-background"
+              className="text-center p-8 rounded-2xl border border-white/10 bg-white/5"
             >
-              <p className="text-4xl md:text-5xl font-bold gradient-text mb-2">
+              <p className="font-display text-4xl md:text-5xl font-bold text-white mb-2">
                 {m.value}
               </p>
-              <p className="text-foreground font-semibold mb-1">{m.label}</p>
-              <p className="text-sm text-muted">{m.note}</p>
+              <p className="text-white font-semibold text-sm mb-1">{m.label}</p>
+              <p className="text-xs text-white/40">{m.note}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Screenshots section */}
+        {/* Screenshots placeholder */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-16"
         >
-          <p className="text-center text-sm text-muted mb-8 uppercase tracking-wider">
+          <p className="text-center text-xs text-white/30 mb-8 uppercase tracking-[0.15em]">
             Straight from Ads Manager
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {Array.from({ length: 8 }).map((_, i) => (
               <div
                 key={i}
-                className="aspect-[4/3] rounded-xl bg-card border border-border flex items-center justify-center text-xs text-muted-foreground hover:border-accent/30 transition-colors cursor-pointer"
+                className="aspect-[4/3] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xs text-white/20 hover:bg-white/8 transition-colors cursor-pointer"
               >
                 Screenshot {i + 1}
               </div>
             ))}
           </div>
-
-          <p className="text-center text-xs text-muted-foreground mt-4">
-            Tap any image to view full size · Scroll for more →
-          </p>
         </motion.div>
       </div>
     </section>

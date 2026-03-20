@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ArrowRight, Phone } from "lucide-react";
 
 const packages = [
   {
@@ -16,9 +16,9 @@ const packages = [
       "1 concept × 5 hook variations",
       "Full scripting + professional editing",
       "Captions, branding, music",
-      "Ad copy for each video (primary text + headline)",
+      "Ad copy for each video",
       "Delivered in 9:16 + 1:1 formats",
-      "Campaign setup guide with targeting tips",
+      "Campaign setup guide",
       "7 business day turnaround",
     ],
   },
@@ -34,8 +34,8 @@ const packages = [
       "3 concepts × 5 hook variations",
       "Multiple AI presenters per concept",
       "Full scripting + editing + captions + branding",
-      "Ad copy package per concept (3 texts + 3 headlines)",
-      "Campaign setup guide with audience targeting",
+      "Ad copy package per concept",
+      "Campaign setup guide with targeting",
       "7 business day turnaround",
       "The sweet spot for most businesses",
     ],
@@ -51,10 +51,10 @@ const packages = [
       "30 AI video ads",
       "5 concepts × 6 hook variations",
       "Full format mix: talking head, testimonial, educational, FAQ, comparison",
-      "Multiple AI presenters matched to your audience",
-      "Complete ad copy packages for every concept",
-      "Competitor ad audit — what's running in your space",
-      "30-min strategy call on launch approach",
+      "Multiple AI presenters",
+      "Complete ad copy packages",
+      "Competitor ad audit",
+      "30-min strategy call",
       "10 business day turnaround + 1 round revisions",
     ],
   },
@@ -75,92 +75,133 @@ const retainerFeatures = [
 
 export function Pricing() {
   return (
-    <section id="packages" className="py-24 md:py-32 bg-card/30">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="packages" className="py-24 md:py-32 bg-surface">
+      <div className="mx-auto max-w-6xl px-6">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-4 text-center"
+          className="text-xs uppercase tracking-[0.2em] text-muted font-semibold mb-4 text-center"
         >
           Choose Your Package
         </motion.p>
 
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-4"
+          className="font-display text-3xl md:text-4xl font-bold text-center mb-4 text-navy"
         >
-          One-time packages. No contracts. No commitments.
+          One-time packages. No contracts.
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="text-muted text-center text-lg mb-14 max-w-2xl mx-auto"
+          className="text-muted text-center text-base mb-16 max-w-lg mx-auto"
         >
           Pick a package, get your videos, run your ads. Want more? Come back
           anytime or upgrade to monthly.
         </motion.p>
 
-        {/* One-time packages */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {/* Pricing cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
-              className={`relative p-8 rounded-2xl border bg-background flex flex-col ${
+              transition={{ delay: i * 0.1 }}
+              className={`relative p-8 rounded-2xl flex flex-col transition-all ${
                 pkg.popular
-                  ? "border-accent glow-orange"
-                  : "border-border hover:border-accent/30"
-              } transition-all`}
+                  ? "bg-navy text-white shadow-2xl shadow-navy/20 scale-[1.02]"
+                  : "bg-white border border-border hover:border-navy/15 hover:shadow-lg hover:shadow-navy/5"
+              }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
-                  Most Popular
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-white text-navy text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                    Most Popular
+                  </span>
                 </div>
               )}
 
               <div className="mb-6">
-                <h3 className="text-xl font-bold mb-1">{pkg.name}</h3>
-                <p className="text-sm text-muted">{pkg.videos}</p>
+                <h3
+                  className={`text-lg font-bold mb-0.5 ${
+                    pkg.popular ? "text-white" : "text-navy"
+                  }`}
+                >
+                  {pkg.name}
+                </h3>
+                <p
+                  className={`text-xs ${
+                    pkg.popular ? "text-white/50" : "text-muted"
+                  }`}
+                >
+                  {pkg.videos}
+                </p>
               </div>
 
               <div className="mb-6">
-                <span className="text-4xl font-bold">{pkg.price}</span>
-                <span className="text-muted ml-2 text-sm">{pkg.period}</span>
+                <span
+                  className={`font-display text-4xl font-bold ${
+                    pkg.popular ? "text-white" : "text-navy"
+                  }`}
+                >
+                  {pkg.price}
+                </span>
+                <span
+                  className={`text-sm ml-2 ${
+                    pkg.popular ? "text-white/40" : "text-muted"
+                  }`}
+                >
+                  {pkg.period}
+                </span>
               </div>
 
-              <p className="text-sm text-muted mb-6">{pkg.desc}</p>
+              <p
+                className={`text-sm mb-6 ${
+                  pkg.popular ? "text-white/60" : "text-muted"
+                }`}
+              >
+                {pkg.desc}
+              </p>
 
-              <ul className="space-y-3 mb-8 flex-1">
+              <ul className="space-y-2.5 mb-8 flex-1">
                 {pkg.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm">
+                  <li key={f} className="flex items-start gap-2.5 text-[13px]">
                     <Check
-                      size={16}
-                      className="text-accent shrink-0 mt-0.5"
+                      size={14}
+                      className={`shrink-0 mt-0.5 ${
+                        pkg.popular ? "text-white/60" : "text-navy/40"
+                      }`}
                     />
-                    <span className="text-muted">{f}</span>
+                    <span
+                      className={
+                        pkg.popular ? "text-white/70" : "text-muted"
+                      }
+                    >
+                      {f}
+                    </span>
                   </li>
                 ))}
               </ul>
 
               <a
                 href="#contact"
-                className={`block text-center rounded-full py-3 text-sm font-semibold transition-all ${
+                className={`flex items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold transition-all ${
                   pkg.popular
-                    ? "bg-accent text-white hover:bg-accent-light"
-                    : "border border-border text-foreground hover:bg-card"
+                    ? "bg-white text-navy hover:bg-white/90"
+                    : "bg-navy text-white hover:bg-navy-light"
                 }`}
               >
                 Get Started
+                <ArrowRight size={14} />
               </a>
             </motion.div>
           ))}
@@ -168,45 +209,50 @@ export function Pricing() {
 
         {/* Monthly retainer */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-accent/30 bg-background p-8 md:p-12 max-w-4xl mx-auto"
+          className="mt-12 rounded-2xl border border-navy/10 bg-white p-8 md:p-12 max-w-4xl mx-auto"
         >
-          <div className="text-center mb-8">
-            <p className="text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-3">
-              For Serious Growth
-            </p>
-            <h3 className="text-2xl md:text-3xl font-bold mb-2">
-              The Ad Engine Monthly Retainer
-            </h3>
-            <p className="text-4xl font-bold gradient-text">$2,500/month</p>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted font-semibold mb-2">
+                For Serious Growth
+              </p>
+              <h3 className="font-display text-2xl md:text-3xl font-bold text-navy">
+                Monthly Retainer
+              </h3>
+            </div>
+            <div className="text-left md:text-right">
+              <p className="font-display text-4xl font-bold text-navy">
+                $2,500
+              </p>
+              <p className="text-xs text-muted">/month</p>
+            </div>
           </div>
 
-          <p className="text-muted text-center max-w-2xl mx-auto mb-10 text-[15px] leading-relaxed">
+          <p className="text-muted text-sm leading-relaxed mb-8 max-w-2xl">
             Stop buying creative one batch at a time. The Ad Engine runs
             continuously — fresh video ads every week, strategy included,
-            performance tracked. Your creative never goes stale. Your ads never
-            stop improving.
+            performance tracked. Your creative never goes stale.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
             {retainerFeatures.map((f) => (
-              <div key={f} className="flex items-start gap-3 text-sm">
-                <Check size={16} className="text-accent shrink-0 mt-0.5" />
+              <div key={f} className="flex items-start gap-2.5 text-[13px]">
+                <Check size={14} className="text-navy/40 shrink-0 mt-0.5" />
                 <span className="text-muted">{f}</span>
               </div>
             ))}
           </div>
 
-          <div className="text-center">
-            <a
-              href="#contact"
-              className="inline-block rounded-full bg-accent px-8 py-3.5 text-base font-semibold text-white hover:bg-accent-light transition-all glow-orange"
-            >
-              Book a Strategy Call
-            </a>
-          </div>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-navy text-white px-8 py-3.5 rounded-full text-sm font-semibold hover:bg-navy-light transition-colors"
+          >
+            <Phone size={14} />
+            Book a Strategy Call
+          </a>
         </motion.div>
       </div>
     </section>
