@@ -10,8 +10,8 @@ const SHOWCASE_BASE =
   "https://nhnnzplvkxqxbvkcjvai.supabase.co/storage/v1/object/public/Media/showcase";
 
 const heroVideos = [
-  { id: "newlithmanuf", src: `${PORTFOLIO_BASE}/newlithmanuf.mp4` },
-  { id: "radiotatr", src: `${PORTFOLIO_BASE}/radiotatr-v3.mp4` },
+  { id: "budgetman1", src: `${PORTFOLIO_BASE}/budgetman1.mp4` },
+  { id: "showcase-07", src: `${SHOWCASE_BASE}/showcase-07.mp4` },
   { id: "showcase-01", src: `${SHOWCASE_BASE}/showcase-01.mp4` },
 ];
 
