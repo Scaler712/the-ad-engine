@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 
 const goodFit = [
-  "You run a service business, SaaS, agency, or any business that acquires clients through paid ads",
+  "You run an ecommerce brand, service business, SaaS, agency, or any business that sells through paid ads",
   "You know video ads outperform static images but you're not producing them",
   "You're tired of paying agencies $3-5k/month for the same recycled creatives",
   "You don't want to be on camera and don't have time to manage content production",
@@ -29,7 +29,7 @@ export function Fit() {
           viewport={{ once: true }}
           className="font-heading text-3xl md:text-5xl tracking-tight text-center mb-8 md:mb-12 text-[#1a1a1a]"
         >
-          Built for businesses that run paid ads
+          Built for brands and businesses that run paid ads
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-5">

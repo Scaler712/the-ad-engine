@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "What industries do you work with?",
-    a: "Service businesses, SaaS, agencies, coaches, med spas, dental practices, law firms, real estate, home services, financial services, and more. If you acquire clients through paid ads, we can help.",
+    a: "Ecommerce brands, DTC, service businesses, SaaS, agencies, coaches, med spas, dental practices, law firms, real estate, home services, financial services, and more. If you sell through paid ads — whether products or services — we can help.",
   },
   {
     q: "How fast do I get my videos?",

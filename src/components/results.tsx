@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 
 const values = [
+  { industry: "Ecommerce product launch", range: "$5,000 - $50,000" },
+  { industry: "DTC subscription brand", range: "$10,000 - $100,000" },
   { industry: "Dental implant case", range: "$5,000 - $15,000" },
   { industry: "Roof replacement job", range: "$8,000 - $25,000" },
   { industry: "SaaS annual contract", range: "$3,000 - $50,000" },
@@ -30,7 +32,7 @@ export function Results() {
             className="card p-5 md:p-9"
           >
             <p className="text-xs text-gray-400 uppercase tracking-wider mb-4">
-              Client value per industry
+              Revenue per client / product launch
             </p>
             <div className="space-y-3">
               {values.map((v, i) => (
@@ -61,9 +63,9 @@ export function Results() {
               Do the math. One client pays for everything.
             </h2>
             <p className="text-gray-500 text-base mb-10 leading-relaxed">
-              Our Growth package costs $1,500. One new client from one winning
-              ad makes that back many times over. Here&apos;s what one client is
-              worth in your industry:
+              Our Growth package costs $1,500. One winning ad — whether it
+              lands a client or drives product sales — makes that back many
+              times over. Here&apos;s what that looks like in your industry:
             </p>
 
             <div className="space-y-6">
