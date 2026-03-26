@@ -6,11 +6,13 @@ import { useEffect, useRef, useState } from "react";
 const PORTFOLIO_BASE =
   "https://nhnnzplvkxqxbvkcjvai.supabase.co/storage/v1/object/public/studio-refs/portfolio";
 
+const SHOWCASE_BASE =
+  "https://nhnnzplvkxqxbvkcjvai.supabase.co/storage/v1/object/public/Media/showcase";
+
 const heroVideos = [
   { id: "newlithmanuf", src: `${PORTFOLIO_BASE}/newlithmanuf.mp4` },
   { id: "radiotatr", src: `${PORTFOLIO_BASE}/radiotatr.mp4` },
-  { id: "heatingemotion", src: `${PORTFOLIO_BASE}/heatingemotion.mp4` },
-  { id: "budgetman1", src: `${PORTFOLIO_BASE}/budgetman1.mp4` },
+  { id: "showcase-01", src: `${SHOWCASE_BASE}/showcase-01.mp4` },
 ];
 
 function LazyVideo({ src, delay }: { src: string; delay: number }) {
@@ -55,7 +57,7 @@ export function Hero() {
           </>
         }
       >
-        <div className="h-full w-full grid grid-cols-4 gap-1.5 p-1.5 md:gap-3 md:p-3 bg-gray-100 overflow-hidden">
+        <div className="h-full w-full grid grid-cols-3 gap-1.5 p-1.5 md:gap-3 md:p-3 bg-gray-100 overflow-hidden">
           {heroVideos.map((video, i) => (
             <div
               key={video.id}
