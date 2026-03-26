@@ -1,7 +1,11 @@
-const CREATIVES_BASE =
-  "https://nhnnzplvkxqxbvkcjvai.supabase.co/storage/v1/object/public/studio-refs/creatives";
+"use client";
 
-// English creatives first, then Latvian/other
+import { useEffect, useRef, useState } from "react";
+
+const BASE =
+  "https://nhnnzplvkxqxbvkcjvai.supabase.co/storage/v1/object/public/studio-refs/creatives-sm";
+
+// English first, then Latvian/other
 const englishIds = [
   1, 2, 4, 5, 6, 7, 8, 10, 11, 17, 18, 19, 20, 24, 25, 26, 29, 31, 38, 39,
   40, 41, 44, 46, 51, 52, 53, 57, 58, 59, 62, 63, 64, 65, 66, 67, 68, 69, 70,
@@ -16,9 +20,9 @@ const otherIds = [
 
 const allIds = [...englishIds, ...otherIds];
 
-// Split into two rows
-const row1 = allIds.filter((_, i) => i % 2 === 0);
-const row2 = allIds.filter((_, i) => i % 2 === 1);
+// 24 per row — enough variety, reasonable load
+const row1 = allIds.filter((_, i) => i % 2 === 0).slice(0, 24);
+const row2 = allIds.filter((_, i) => i % 2 === 1).slice(0, 24);
 
 function MarqueeRow({
   ids,
@@ -29,41 +33,54 @@ function MarqueeRow({
   direction: "left" | "right";
   duration: number;
 }) {
-  const items = ids.map((id) => (
-    <img
-      key={id}
-      src={`${CREATIVES_BASE}/c${id}.jpg`}
-      alt=""
-      loading="lazy"
-      decoding="async"
-      className="h-[200px] md:h-[260px] w-auto rounded-xl object-cover flex-shrink-0"
-    />
-  ));
-
   return (
     <div className="overflow-hidden relative">
-      {/* Fade edges */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-24 z-10 bg-gradient-to-r from-[#f7f8fb] to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-24 z-10 bg-gradient-to-l from-[#f7f8fb] to-transparent" />
-
       <div
-        className="flex gap-3 md:gap-4"
+        className="flex gap-3 md:gap-4 will-change-transform"
         style={{
           animation: `marquee-${direction} ${duration}s linear infinite`,
           width: "max-content",
         }}
       >
-        {items}
-        {/* Duplicate for seamless loop */}
-        {items}
+        {[...ids, ...ids].map((id, i) => (
+          <img
+            key={`${id}-${i}`}
+            src={`${BASE}/c${id}.jpg`}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            width={200}
+            height={200}
+            className="h-[180px] md:h-[220px] w-auto rounded-xl object-cover flex-shrink-0"
+          />
+        ))}
       </div>
     </div>
   );
 }
 
 export function CreativesMarquee() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-16 md:py-20 overflow-hidden">
+    <section ref={sectionRef} className="py-16 md:py-20 overflow-hidden">
       <div className="mx-auto max-w-5xl px-6 mb-10 md:mb-14">
         <h2 className="font-heading text-3xl md:text-5xl tracking-tight text-center text-[#1a1a1a] mb-4">
           Static creatives included. Every package.
@@ -74,10 +91,12 @@ export function CreativesMarquee() {
         </p>
       </div>
 
-      <div className="space-y-3 md:space-y-4">
-        <MarqueeRow ids={row1} direction="right" duration={120} />
-        <MarqueeRow ids={row2} direction="left" duration={130} />
-      </div>
+      {visible && (
+        <div className="space-y-3 md:space-y-4">
+          <MarqueeRow ids={row1} direction="right" duration={80} />
+          <MarqueeRow ids={row2} direction="left" duration={90} />
+        </div>
+      )}
     </section>
   );
 }
