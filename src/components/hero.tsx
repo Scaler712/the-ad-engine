@@ -3,10 +3,15 @@
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { useEffect, useRef, useState } from "react";
 
-const STORAGE_BASE =
-  "https://nhnnzplvkxqxbvkcjvai.supabase.co/storage/v1/object/public/Media/showcase";
+const PORTFOLIO_BASE =
+  "https://nhnnzplvkxqxbvkcjvai.supabase.co/storage/v1/object/public/studio-refs/portfolio";
 
-const heroVideos = ["showcase-01", "showcase-03", "showcase-07"];
+const heroVideos = [
+  { id: "newlithmanuf", src: `${PORTFOLIO_BASE}/newlithmanuf.mp4` },
+  { id: "radiotatr", src: `${PORTFOLIO_BASE}/radiotatr.mp4` },
+  { id: "heatingemotion", src: `${PORTFOLIO_BASE}/heatingemotion.mp4` },
+  { id: "budgetman1", src: `${PORTFOLIO_BASE}/budgetman1.mp4` },
+];
 
 function LazyVideo({ src, delay }: { src: string; delay: number }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -50,14 +55,14 @@ export function Hero() {
           </>
         }
       >
-        <div className="h-full w-full grid grid-cols-3 gap-1.5 p-1.5 md:gap-3 md:p-3 bg-gray-100 overflow-hidden">
-          {heroVideos.map((id, i) => (
+        <div className="h-full w-full grid grid-cols-4 gap-1.5 p-1.5 md:gap-3 md:p-3 bg-gray-100 overflow-hidden">
+          {heroVideos.map((video, i) => (
             <div
-              key={id}
+              key={video.id}
               className="rounded-lg md:rounded-xl overflow-hidden bg-gray-200"
             >
               <LazyVideo
-                src={`${STORAGE_BASE}/${id}.mp4`}
+                src={video.src}
                 delay={600 + i * 300}
               />
             </div>
