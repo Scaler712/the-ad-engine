@@ -6,6 +6,7 @@ import { Problem } from "@/components/problem";
 import { Process } from "@/components/process";
 import { Work } from "@/components/work";
 import { Results } from "@/components/results";
+import { CreativesMarquee } from "@/components/creatives-marquee";
 import { Comparison } from "@/components/comparison";
 import { Pricing } from "@/components/pricing";
 import { Fit } from "@/components/fit";
@@ -24,6 +25,7 @@ export default function Home() {
         <Process />
         <Work />
         <Results />
+        <CreativesMarquee />
         <Comparison />
         <Pricing />
         <Fit />
