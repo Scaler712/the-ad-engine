@@ -12,7 +12,7 @@ const PORTFOLIO_BASE =
 
 const portfolioVideos = [
   { id: "portfolio-newlithmanuf", src: `${PORTFOLIO_BASE}/newlithmanuf.mp4` },
-  { id: "portfolio-radiotatr", src: `${PORTFOLIO_BASE}/radiotatr-v2.mp4` },
+  { id: "portfolio-radiotatr", src: `${PORTFOLIO_BASE}/radiotatr-v3.mp4` },
   { id: "portfolio-heatingemotion", src: `${PORTFOLIO_BASE}/heatingemotion.mp4` },
   { id: "portfolio-budgetman1", src: `${PORTFOLIO_BASE}/budgetman1.mp4` },
 ];

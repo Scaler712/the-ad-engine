@@ -11,7 +11,7 @@ const SHOWCASE_BASE =
 
 const heroVideos = [
   { id: "newlithmanuf", src: `${PORTFOLIO_BASE}/newlithmanuf.mp4` },
-  { id: "radiotatr", src: `${PORTFOLIO_BASE}/radiotatr-v2.mp4` },
+  { id: "radiotatr", src: `${PORTFOLIO_BASE}/radiotatr-v3.mp4` },
   { id: "showcase-01", src: `${SHOWCASE_BASE}/showcase-01.mp4` },
 ];
 
