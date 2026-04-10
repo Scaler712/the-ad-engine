@@ -105,7 +105,7 @@ export function Work() {
           viewport={{ once: true }}
           className="font-heading text-3xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
-          This is what $100 per video looks like.
+          See if it's good enough.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}

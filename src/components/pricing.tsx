@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Phone } from "lucide-react";
+import { Check } from "lucide-react";
 import ShinyButton from "@/components/ui/shiny-button";
 
 const packages = [
   {
     name: "Starter",
-    videos: "5 videos",
-    price: "$750",
-    perVideo: "$150/video",
-    desc: "Test the waters.",
+    videos: "15 videos",
+    price: "$2,500",
+    desc: "One-time delivery.",
     popular: false,
     features: [
-      "5 AI video ads (15-45 sec)",
-      "1 concept x 5 hook variations",
+      "15 AI video ads (15-45 sec)",
+      "3 concepts x 5 hook variations",
+      "Multiple AI presenters",
       "Direct-response scripting",
-      "Editing + captions + music",
-      "Ad copy per video",
+      "Full editing + captions + branding",
+      "Ad copy per concept",
       "9:16 + 1:1 formats",
       "Campaign setup guide",
       "7-day delivery",
@@ -26,56 +26,26 @@ const packages = [
   },
   {
     name: "Growth",
-    videos: "15 videos",
-    price: "$1,500",
-    perVideo: "$100/video",
-    desc: "Find your winning ads.",
+    videos: "20 videos/month",
+    price: "$4,000",
+    priceLabel: "/mo",
+    desc: "Ongoing creative.",
     popular: true,
     features: [
-      "15 AI video ads",
-      "3 concepts x 5 hook variations",
-      "Multiple AI presenters",
-      "Direct-response scripting",
-      "Full editing + captions + branding",
-      "Ad copy package per concept",
-      "Campaign setup + targeting",
-      "7-day delivery",
-    ],
-    bonus: "30+ static ad creatives",
-  },
-  {
-    name: "Scale",
-    videos: "30 videos",
-    price: "$3,000",
-    perVideo: "$100/video",
-    desc: "Dominate your market.",
-    popular: false,
-    features: [
-      "30 AI video ads",
-      "5 concepts x 6 hook variations",
-      "Full format mix",
+      "20 AI video ads per month",
+      "4 concepts x 5 hook variations",
+      "Performance-based scripting",
       "Multiple AI presenters",
       "Complete ad copy packages",
-      "Competitor ad audit",
-      "30-min strategy call",
-      "10-day delivery + revisions",
+      "Monthly strategy call",
+      "Competitor monitoring",
+      "First batch in 48hrs",
+      "Cancel anytime",
     ],
     bonus: "30+ static ad creatives",
   },
 ];
 
-const retainerFeatures = [
-  "20 video ads per month",
-  "4 concepts x 5 variations",
-  "Performance-based scripting",
-  "Complete ad copy",
-  "Monthly strategy brief",
-  "Competitor monitoring",
-  "Campaign guidance",
-  "First batch in 48hrs",
-  "Unlimited revisions",
-  "Monthly strategy call",
-];
 
 export function Pricing() {
   return (
@@ -100,7 +70,7 @@ export function Pricing() {
         </motion.p>
 
         {/* iOS-style pricing cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
@@ -125,9 +95,11 @@ export function Pricing() {
                   <span className="font-heading text-3xl text-[#1a1a1a]">
                     {pkg.price}
                   </span>
-                  <span className="text-xs text-gray-400 ml-1.5">
-                    {pkg.perVideo}
-                  </span>
+                  {pkg.priceLabel && (
+                    <span className="text-sm text-gray-400 ml-0.5">
+                      {pkg.priceLabel}
+                    </span>
+                  )}
                 </div>
                 <p className="text-sm text-gray-400 mt-1">{pkg.desc}</p>
               </div>
@@ -182,45 +154,6 @@ export function Pricing() {
           Not happy? We revise until you are — or redo it from scratch.
         </p>
 
-        {/* Retainer */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-8 bg-white rounded-2xl p-5 md:p-8 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_2px_8px_rgba(0,0,0,0.04)]"
-        >
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-            <div>
-              <p className="text-xs text-gray-400 mb-1">For serious growth</p>
-              <h3 className="font-cal text-xl text-[#1a1a1a]">
-                Monthly Retainer
-              </h3>
-            </div>
-            <div className="md:text-right">
-              <span className="font-heading text-3xl text-[#1a1a1a]">
-                $2,500
-              </span>
-              <span className="text-sm text-gray-400">/mo</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 mb-6">
-            {retainerFeatures.map((f) => (
-              <div key={f} className="flex items-start gap-2 text-[13px]">
-                <Check size={14} className="text-gray-300 shrink-0 mt-0.5" />
-                <span className="text-gray-600">{f}</span>
-              </div>
-            ))}
-          </div>
-
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-6 py-2.5 rounded-xl text-sm font-medium hover:bg-[#333] transition-colors"
-          >
-            <Phone size={14} />
-            Book a Strategy Call
-          </a>
-        </motion.div>
       </div>
     </section>
   );
