@@ -41,9 +41,6 @@ export function CTA() {
             </a>
           </div>
 
-          <p className="text-xs text-gray-400">
-            No contracts. No commitments. Not happy? We revise or redo. No questions.
-          </p>
         </motion.div>
       </div>
     </section>

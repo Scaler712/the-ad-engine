@@ -40,7 +40,6 @@ const packages = [
       "Monthly strategy call",
       "Competitor monitoring",
       "First batch in 48hrs",
-      "Cancel anytime",
     ],
     bonus: "30+ static ad creatives",
   },
@@ -58,7 +57,7 @@ export function Pricing() {
           className="font-heading text-3xl md:text-5xl tracking-tight text-center mb-5 text-[#1a1a1a]"
         >
 
-          One payment. No contracts. Ads that work.
+          Simple pricing. No surprises.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -149,10 +148,6 @@ export function Pricing() {
           ))}
         </div>
 
-        {/* Guarantee */}
-        <p className="text-center text-sm text-gray-400 mt-8">
-          Not happy? We revise until you are — or redo it from scratch.
-        </p>
 
       </div>
     </section>
